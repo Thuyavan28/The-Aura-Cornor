@@ -1,76 +1,11 @@
 import React, { useRef } from 'react';
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { Reveal } from './Reveal';
-
-interface Review {
-  author: string;
-  date: string;
-  rating: number;
-  text: string;
-  avatarColor: string;
-}
-
-const REVIEWS: Review[] = [
-  {
-    author: 'Priya Menon',
-    date: 'Aug 2025',
-    rating: 5,
-    text: 'Absolutely loved the ambience! The Peri Peri Maggi was insanely delicious and the boba drinks were so refreshing. Found my new favourite hangout spot in Chennai.',
-    avatarColor: '#D4A72C',
-  },
-  {
-    author: 'Arjun Krishnan',
-    date: 'Jul 2025',
-    rating: 5,
-    text: 'Came here for a chill evening after work. The lofi music, the lighting, and the food — everything was perfect. Loaded fries with cheese sauce are a must-try!',
-    avatarColor: '#E8893A',
-  },
-  {
-    author: 'Deepa Rajan',
-    date: 'Jun 2025',
-    rating: 5,
-    text: 'What a gem! Premium food at absolutely pocket-friendly prices. The hot chocolate is smooth, rich, and soul-warming. The staff was kind and attentive.',
-    avatarColor: '#7A5C43',
-  },
-  {
-    author: 'Karthik Selvam',
-    date: 'May 2025',
-    rating: 5,
-    text: '5 stars all the way. The café has this calm and cozy vibe that makes you want to stay for hours. Gourmet bowls were filling and beautifully plated.',
-    avatarColor: '#16a34a',
-  },
-  {
-    author: 'Shalini Bala',
-    date: 'Feb 2025',
-    rating: 5,
-    text: 'Perfect place to study or just chill with friends. Great food, great vibes, great prices. The corner seating is super aesthetic for photos too!',
-    avatarColor: '#E8893A',
-  },
-  {
-    author: 'Ravi Shankar',
-    date: 'Jan 2025',
-    rating: 5,
-    text: 'Very pleasant experience. The service was quick despite being busy on a weekend. The sandwich with mayo and grilled veggies was a solid choice.',
-    avatarColor: '#4A3325',
-  },
-  {
-    author: 'Vikram Nair',
-    date: 'Mar 2025',
-    rating: 5,
-    text: 'Honestly the best café I’ve been to in Medavakkam. Value for money is outstanding. Tried the chicken burger and it was juicy and well-seasoned. Highly recommend!',
-    avatarColor: '#D4A72C',
-  },
-  {
-    author: 'Ananya Suresh',
-    date: 'Apr 2025',
-    rating: 5,
-    text: 'Discovered this place through a friend and I’m so glad I did. The boba was fresh and perfectly sweetened, milkshakes are incredibly creamy. Will be back soon!',
-    avatarColor: '#E8893A',
-  },
-];
+import { useGoogleReviews } from '../hooks/useGoogleReviews';
 
 export const ReviewsMarquee: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { reviews, rating, totalReviews, googleMapsUrl } = useGoogleReviews();
 
   const scrollFn = (dir: 'left' | 'right') => {
     scrollRef.current?.scrollBy({ left: dir === 'left' ? -380 : 380, behavior: 'smooth' });
@@ -122,25 +57,26 @@ export const ReviewsMarquee: React.FC = () => {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px',
-                  padding: '5px 14px',
+                  padding: '6px 16px',
                   borderRadius: '50px',
-                  border: '1px solid #D4A72C',
+                  border: '1.5px solid #D4A72C',
                   background: '#FFE9A8',
                   marginBottom: '14px',
+                  boxShadow: '0 2px 8px rgba(212,167,44,0.15)',
                 }}
               >
-                <Star size={11} color="#D4A72C" fill="#D4A72C" />
+                <Star size={12} color="#D4A72C" fill="#D4A72C" />
                 <span
                   style={{
                     fontFamily: '"Outfit", sans-serif',
-                    fontSize: '10px',
-                    fontWeight: 700,
+                    fontSize: '10.5px',
+                    fontWeight: 800,
                     letterSpacing: '0.2em',
                     textTransform: 'uppercase',
                     color: '#4A3325',
                   }}
                 >
-                  5.0 RATING · 8 REVIEWS
+                  {rating.toFixed(1)} GOOGLE RATING · {totalReviews} REVIEWS
                 </span>
               </div>
             </Reveal>
@@ -156,47 +92,86 @@ export const ReviewsMarquee: React.FC = () => {
                   letterSpacing: '-0.02em',
                 }}
               >
-                Guests <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#D4A72C' }}>Love Us</span>
+                Guests <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#E8893A' }}>Love Us</span>
               </h2>
             </Reveal>
           </div>
 
-          {/* Navigation arrow buttons */}
+          {/* Right Action: Leave Review link + Navigation arrow buttons */}
           <Reveal direction="right" delay={0.1}>
-            <div style={{ display: 'flex', gap: '10px' }}>
-              {(['left', 'right'] as const).map(dir => (
-                <button
-                  key={dir}
-                  onClick={() => scrollFn(dir)}
-                  style={{
-                    width: '46px',
-                    height: '46px',
-                    borderRadius: '50%',
-                    background: '#FFFDF5',
-                    border: '1px solid #E8D3B0',
-                    color: '#4A3325',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'all 0.25s ease',
-                    boxShadow: '0 2px 8px rgba(74, 51, 37, 0.05)',
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = '#FFE9A8';
-                    e.currentTarget.style.borderColor = '#D4A72C';
-                    e.currentTarget.style.transform = 'scale(1.05)';
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = '#FFFDF5';
-                    e.currentTarget.style.borderColor = '#E8D3B0';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
-                  aria-label={`Scroll ${dir}`}
-                >
-                  {dir === 'left' ? <ChevronLeft size={19} /> : <ChevronRight size={19} />}
-                </button>
-              ))}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '10px 18px',
+                  borderRadius: '50px',
+                  background: '#FFFDF5',
+                  border: '1px solid #E8D3B0',
+                  color: '#4A3325',
+                  fontFamily: '"Outfit", sans-serif',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  boxShadow: '0 2px 8px rgba(74, 51, 37, 0.05)',
+                  transition: 'all 0.25s ease',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = '#FFE9A8';
+                  e.currentTarget.style.borderColor = '#D4A72C';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = '#FFFDF5';
+                  e.currentTarget.style.borderColor = '#E8D3B0';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <span>View on Google</span>
+                <ExternalLink size={12} color="#E8893A" />
+              </a>
+
+              <div style={{ display: 'flex', gap: '8px' }}>
+                {(['left', 'right'] as const).map(dir => (
+                  <button
+                    key={dir}
+                    onClick={() => scrollFn(dir)}
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '50%',
+                      background: '#FFFDF5',
+                      border: '1px solid #E8D3B0',
+                      color: '#4A3325',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transition: 'all 0.25s ease',
+                      boxShadow: '0 2px 8px rgba(74, 51, 37, 0.05)',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = '#FFE9A8';
+                      e.currentTarget.style.borderColor = '#D4A72C';
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = '#FFFDF5';
+                      e.currentTarget.style.borderColor = '#E8D3B0';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                    aria-label={`Scroll ${dir}`}
+                  >
+                    {dir === 'left' ? <ChevronLeft size={19} /> : <ChevronRight size={19} />}
+                  </button>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
@@ -222,15 +197,15 @@ export const ReviewsMarquee: React.FC = () => {
             userSelect: 'none',
           }}
         >
-          {[...REVIEWS, ...REVIEWS, ...REVIEWS].map((review, i) => (
+          {[...reviews, ...reviews, ...reviews].map((review, i) => (
             <div
-              key={i}
+              key={`${review.id}-${i}`}
               style={{
                 flexShrink: 0,
                 width: '360px',
                 borderRadius: '24px',
                 background: '#FFFDF5',
-                border: '1px solid #E8D3B0',
+                border: '1.5px solid #E8D3B0',
                 padding: '28px 26px',
                 position: 'relative',
                 transition: 'all 0.35s ease',
@@ -252,9 +227,9 @@ export const ReviewsMarquee: React.FC = () => {
                 <Quote size={40} color="#D4A72C" />
               </div>
 
-              {/* 5 Stars */}
+              {/* Stars */}
               <div style={{ display: 'flex', gap: '3px', marginBottom: '16px' }}>
-                {[...Array(review.rating)].map((_, j) => (
+                {[...Array(Math.min(review.rating, 5))].map((_, j) => (
                   <Star key={j} size={14} color="#D4A72C" fill="#D4A72C" />
                 ))}
               </div>
@@ -289,25 +264,40 @@ export const ReviewsMarquee: React.FC = () => {
                   paddingTop: '16px',
                 }}
               >
-                {/* Circular Initial Avatar */}
-                <div
-                  style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '50%',
-                    flexShrink: 0,
-                    background: review.avatarColor,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '14px',
-                    fontWeight: 700,
-                    color: '#FFFDF5',
-                    border: '1.5px solid rgba(255,255,255,0.4)',
-                  }}
-                >
-                  {review.author.charAt(0)}
-                </div>
+                {/* Profile Photo or Circular Initial Avatar */}
+                {review.profilePhotoUrl ? (
+                  <img
+                    src={review.profilePhotoUrl}
+                    alt={review.author}
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '50%',
+                      flexShrink: 0,
+                      objectFit: 'cover',
+                      border: '1.5px solid #D4A72C',
+                    }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '50%',
+                      flexShrink: 0,
+                      background: review.avatarColor,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '14px',
+                      fontWeight: 700,
+                      color: '#FFFDF5',
+                      border: '1.5px solid rgba(255,255,255,0.4)',
+                    }}
+                  >
+                    {review.author.charAt(0)}
+                  </div>
+                )}
 
                 <div>
                   <p
@@ -362,8 +352,8 @@ export const ReviewsMarquee: React.FC = () => {
             }}
           >
             {[
-              { label: 'AVERAGE RATING', value: '5.0 ★' },
-              { label: 'REVIEWS ON GOOGLE', value: '8 Verified' },
+              { label: 'AVERAGE RATING', value: `${rating.toFixed(1)} ★` },
+              { label: 'REVIEWS ON GOOGLE', value: `${totalReviews} Verified` },
               { label: 'NEIGHBORHOOD CAFÉ', value: 'Est. 2024' },
             ].map((item, i) => (
               <div key={i} style={{ textAlign: 'center' }}>
