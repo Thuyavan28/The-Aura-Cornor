@@ -34,7 +34,7 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
         particleCount: 28,
         spread: 50,
         origin: { x, y },
-        colors: ['#A7EBF2', '#54ACBF', '#ff6b8b', '#ffd166'],
+        colors: ['#D4A72C', '#E8893A', '#FFE9A8', '#4A3325'],
         disableForReducedMotion: true,
       });
     }
@@ -85,12 +85,12 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
         <div
           className="polaroid-face polaroid-front"
           style={{
-            background: '#ffffff',
+            background: '#FFFDF5',
             padding: '10px 10px 12px 10px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            border: '1px solid rgba(0,0,0,0.08)',
+            border: '1px solid rgba(74, 51, 37, 0.12)',
             boxSizing: 'border-box',
           }}
         >
@@ -101,8 +101,8 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
             height: '240px',
             borderRadius: '6px',
             overflow: 'hidden',
-            backgroundColor: '#071526',
-            boxShadow: 'inset 0 0 6px rgba(0,0,0,0.25)',
+            backgroundColor: '#E8D3B0',
+            boxShadow: 'inset 0 0 6px rgba(74, 51, 37, 0.15)',
             flexShrink: 0,
           }}>
             <img
@@ -123,7 +123,7 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
             <div style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 50%, rgba(0,0,0,0.12) 100%)',
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(74, 51, 37, 0.08) 100%)',
               pointerEvents: 'none',
             }} />
 
@@ -135,20 +135,21 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
                 right: '8px',
                 padding: '3px 8px',
                 borderRadius: '50px',
-                background: 'rgba(0, 0, 0, 0.65)',
+                background: 'rgba(255, 253, 245, 0.92)',
                 backdropFilter: 'blur(6px)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '4px',
-                color: '#A7EBF2',
+                color: '#4A3325',
+                border: '1px solid #D4A72C',
                 fontSize: '9px',
                 fontWeight: 700,
                 letterSpacing: '0.04em',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                boxShadow: '0 2px 8px rgba(74, 51, 37, 0.15)',
                 transition: 'all 0.2s ease',
               }}
             >
-              <RotateCw size={10} />
+              <RotateCw size={10} color="#E8893A" />
               <span>Tap to Flip</span>
             </div>
           </div>
@@ -160,7 +161,7 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
                 fontFamily: '"Caveat", cursive',
                 fontSize: '18px',
                 fontWeight: 700,
-                color: '#0f172a',
+                color: '#4A3325',
                 lineHeight: 1.25,
                 marginBottom: '2px',
                 whiteSpace: 'nowrap',
@@ -172,7 +173,7 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
 
               <div style={{
                 fontSize: '10.5px',
-                color: '#64748b',
+                color: '#7A5C43',
                 fontFamily: '"Outfit", sans-serif',
                 fontWeight: 500,
                 whiteSpace: 'nowrap',
@@ -188,22 +189,22 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
               alignItems: 'center',
               justifyContent: 'space-between',
               paddingTop: '6px',
-              borderTop: '1px dashed rgba(0,0,0,0.12)',
+              borderTop: '1px dashed rgba(74, 51, 37, 0.15)',
             }}>
               <div style={{
                 fontFamily: '"Outfit", sans-serif',
                 fontSize: '10px',
-                color: '#64748b',
+                color: '#7A5C43',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '3px',
                 fontWeight: 500,
               }}>
-                <Calendar size={10} />
+                <Calendar size={10} color="#E8893A" />
                 <span>{item.date}</span>
               </div>
 
-              {/* Action Buttons: Flip Button & Like Button */}
+              {/* Action Buttons */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                 <button
                   type="button"
@@ -215,16 +216,16 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
                     gap: '3px',
                     padding: '2px 8px',
                     borderRadius: '50px',
-                    background: 'rgba(38,101,140,0.08)',
-                    border: '1px solid rgba(38,101,140,0.2)',
-                    color: '#26658C',
+                    background: '#FFE9A8',
+                    border: '1px solid #D4A72C',
+                    color: '#4A3325',
                     fontSize: '10px',
                     fontWeight: 700,
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.background = '#26658C'; e.currentTarget.style.color = '#fff'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(38,101,140,0.08)'; e.currentTarget.style.color = '#26658C'; }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#D4A72C'; e.currentTarget.style.color = '#FFFDF5'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = '#FFE9A8'; e.currentTarget.style.color = '#4A3325'; }}
                 >
                   <RotateCw size={9} />
                   <span>Read Note</span>
@@ -240,16 +241,16 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
                     gap: '3px',
                     padding: '2px 8px',
                     borderRadius: '50px',
-                    background: hasLiked ? 'rgba(255, 107, 139, 0.14)' : 'rgba(0,0,0,0.05)',
-                    border: hasLiked ? '1px solid rgba(255, 107, 139, 0.4)' : '1px solid rgba(0,0,0,0.1)',
-                    color: hasLiked ? '#e11d48' : '#64748b',
+                    background: hasLiked ? 'rgba(232, 137, 58, 0.15)' : '#FFFDF5',
+                    border: hasLiked ? '1px solid #E8893A' : '1px solid #E8D3B0',
+                    color: hasLiked ? '#E8893A' : '#7A5C43',
                     fontSize: '10px',
                     fontWeight: 700,
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
                   }}
                 >
-                  <Heart size={10} fill={hasLiked ? '#e11d48' : 'transparent'} />
+                  <Heart size={10} fill={hasLiked ? '#E8893A' : 'transparent'} />
                   <span>{likesCount}</span>
                 </button>
               </div>
@@ -265,10 +266,10 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            background: '#fdfbf7',
-            backgroundImage: 'radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px)',
+            background: '#FFFDF5',
+            backgroundImage: 'radial-gradient(rgba(74, 51, 37, 0.06) 1px, transparent 1px)',
             backgroundSize: '14px 14px',
-            border: '1px solid rgba(0,0,0,0.09)',
+            border: '1px solid rgba(74, 51, 37, 0.12)',
             boxSizing: 'border-box',
           }}
         >
@@ -285,31 +286,31 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
               gap: '4px',
               fontSize: '10px',
               fontWeight: 800,
-              color: '#26658C',
+              color: '#4A3325',
               textTransform: 'uppercase',
               letterSpacing: '0.12em',
               fontFamily: '"Outfit", sans-serif',
-              background: 'rgba(38,101,140,0.08)',
+              background: '#FFE9A8',
               padding: '3px 8px',
               borderRadius: '50px',
-              border: '1px solid rgba(38,101,140,0.2)',
+              border: '1px solid #D4A72C',
             }}>
-              <Coffee size={11} color="#26658C" />
+              <Coffee size={11} color="#E8893A" />
               <span>Memory Journal</span>
             </div>
 
             {/* Vintage Rubber Stamp */}
             <div style={{
-              border: '1.5px dashed #26658C',
+              border: '1.5px dashed #D4A72C',
               borderRadius: '4px',
               padding: '2px 7px',
-              color: '#26658C',
+              color: '#D4A72C',
               fontSize: '8.5px',
               fontWeight: 800,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
               transform: 'rotate(4deg)',
-              background: 'rgba(38, 101, 140, 0.05)',
+              background: 'rgba(255, 233, 168, 0.4)',
               fontFamily: '"Outfit", sans-serif',
             }}>
               AURA • CHENNAI
@@ -323,7 +324,7 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
               fontFamily: '"Playfair Display", serif',
               fontSize: '15px',
               fontWeight: 700,
-              color: '#0f172a',
+              color: '#4A3325',
               lineHeight: 1.25,
             }}>
               {item.title}
@@ -331,17 +332,17 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
 
             {/* Handwritten Note Quote */}
             <div style={{
-              background: 'rgba(255, 255, 255, 0.75)',
-              borderLeft: '3px solid #54ACBF',
+              background: '#FFE9A8',
+              borderLeft: '3px solid #E8893A',
               padding: '7px 10px',
               borderRadius: '0 8px 8px 0',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+              boxShadow: '0 2px 8px rgba(74, 51, 37, 0.04)',
             }}>
               <p style={{
                 fontFamily: '"Caveat", cursive',
                 fontSize: '16.5px',
                 lineHeight: 1.35,
-                color: '#1e293b',
+                color: '#4A3325',
                 margin: 0,
                 fontWeight: 600,
               }}>
@@ -349,13 +350,13 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
               </p>
             </div>
 
-            {/* Additional Story Details if available */}
+            {/* Additional Story Details */}
             {item.storyDetails && (
               <p style={{
                 fontFamily: '"Outfit", sans-serif',
                 fontSize: '11px',
                 lineHeight: 1.45,
-                color: '#64748b',
+                color: '#7A5C43',
                 margin: 0,
               }}>
                 {item.storyDetails}
@@ -371,8 +372,8 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
                     fontSize: '9px',
                     padding: '2px 7px',
                     borderRadius: '4px',
-                    background: 'rgba(38,101,140,0.08)',
-                    color: '#26658C',
+                    background: '#FFE9A8',
+                    color: '#7A5C43',
                     fontWeight: 700,
                     fontFamily: '"Outfit", sans-serif',
                   }}
@@ -385,28 +386,28 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
 
           {/* Details & Footer Bar */}
           <div style={{
-            borderTop: '1px solid rgba(0,0,0,0.08)',
+            borderTop: '1px solid rgba(74, 51, 37, 0.1)',
             paddingTop: '8px',
             marginTop: '6px',
             display: 'flex',
             flexDirection: 'column',
             gap: '6px',
           }}>
-            {/* Location & Photographer metadata */}
+            {/* Location & Photographer */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               fontSize: '9.5px',
-              color: '#64748b',
+              color: '#7A5C43',
               fontFamily: '"Outfit", sans-serif',
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
-                <MapPin size={10} color="#54ACBF" />
+                <MapPin size={10} color="#E8893A" />
                 <span style={{ fontWeight: 600 }}>{item.location}</span>
               </div>
               {item.photographer && (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: '#94a3b8' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: '#7A5C43' }}>
                   <User size={9} />
                   <span>{item.photographer}</span>
                 </div>
@@ -428,17 +429,17 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
                   gap: '4px',
                   padding: '4px 10px',
                   borderRadius: '50px',
-                  background: '#011026',
-                  color: '#A7EBF2',
+                  background: '#E8893A',
+                  color: '#FFFDF5',
                   fontSize: '9.5px',
                   fontWeight: 700,
-                  border: '1px solid rgba(167,235,242,0.3)',
+                  border: 'none',
                   cursor: 'pointer',
-                  boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+                  boxShadow: '0 2px 6px rgba(232, 137, 58, 0.3)',
                   transition: 'all 0.2s ease',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#26658C'; e.currentTarget.style.color = '#fff'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = '#011026'; e.currentTarget.style.color = '#A7EBF2'; }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#D4A72C'; e.currentTarget.style.color = '#4A3325'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#E8893A'; e.currentTarget.style.color = '#FFFDF5'; }}
               >
                 <RotateCw size={9} />
                 <span>Flip Photo</span>
@@ -454,16 +455,16 @@ export const PolaroidCard: React.FC<PolaroidCardProps> = ({
                   gap: '3px',
                   padding: '3px 8px',
                   borderRadius: '50px',
-                  background: hasLiked ? 'rgba(255, 107, 139, 0.14)' : 'rgba(0,0,0,0.05)',
-                  border: hasLiked ? '1px solid rgba(255, 107, 139, 0.4)' : '1px solid rgba(0,0,0,0.1)',
-                  color: hasLiked ? '#e11d48' : '#64748b',
+                  background: hasLiked ? 'rgba(232, 137, 58, 0.15)' : '#FFFDF5',
+                  border: hasLiked ? '1px solid #E8893A' : '1px solid #E8D3B0',
+                  color: hasLiked ? '#E8893A' : '#7A5C43',
                   fontSize: '10px',
                   fontWeight: 700,
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
                 }}
               >
-                <Heart size={10} fill={hasLiked ? '#e11d48' : 'transparent'} />
+                <Heart size={10} fill={hasLiked ? '#E8893A' : 'transparent'} />
                 <span>{likesCount}</span>
               </button>
             </div>

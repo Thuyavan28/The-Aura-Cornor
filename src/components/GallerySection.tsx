@@ -27,21 +27,23 @@ export const GallerySection: React.FC = () => {
     <section
       id="gallery"
       style={{
-        backgroundColor: '#010e22',
+        backgroundColor: '#FFFFFF',
         position: 'relative',
         padding: 'clamp(70px, 8vw, 110px) 0',
         overflow: 'hidden',
+        borderTop: '1px solid #E8D3B0',
+        borderBottom: '1px solid #E8D3B0',
       }}
     >
-      {/* Ambient background glow */}
+      {/* Subtle warm ambient background glow on pure white */}
       <div style={{
         position: 'absolute',
         top: '-120px',
         left: '50%',
         transform: 'translateX(-50%)',
-        width: '700px',
+        width: '750px',
         height: '350px',
-        background: 'radial-gradient(circle, rgba(84,172,191,0.14) 0%, rgba(38,101,140,0.04) 60%, transparent 80%)',
+        background: 'radial-gradient(circle, rgba(255,233,168,0.45) 0%, rgba(232,137,58,0.1) 60%, transparent 80%)',
         filter: 'blur(90px)',
         pointerEvents: 'none',
       }} />
@@ -60,20 +62,21 @@ export const GallerySection: React.FC = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              padding: '5px 16px',
+              padding: '6px 18px',
               borderRadius: '50px',
-              border: '1px solid rgba(167,235,242,0.25)',
-              background: 'rgba(167,235,242,0.06)',
+              border: '1.5px solid #D4A72C',
+              background: '#FFE9A8',
               marginBottom: '14px',
+              boxShadow: '0 2px 8px rgba(212,167,44,0.15)',
             }}>
-              <Camera size={12} color="#A7EBF2" />
+              <Camera size={13} color="#E8893A" />
               <span style={{
                 fontFamily: '"Outfit", sans-serif',
                 fontSize: '11px',
-                fontWeight: 700,
+                fontWeight: 800,
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: '#A7EBF2',
+                color: '#4A3325',
               }}>
                 Polaroid Memories &amp; Ambience
               </span>
@@ -85,23 +88,23 @@ export const GallerySection: React.FC = () => {
               fontFamily: '"Playfair Display", serif',
               fontSize: 'clamp(28px, 4.5vw, 52px)',
               fontWeight: 700,
-              color: '#ffffff',
+              color: '#4A3325',
               lineHeight: 1.15,
               margin: '0 0 12px',
               letterSpacing: '-0.02em',
             }}>
-              Scrapbook of <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#A7EBF2' }}>The Aura Corner</span>
+              Scrapbook of <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#E8893A' }}>The Aura Corner</span>
             </h2>
           </Reveal>
 
           <Reveal direction="up" delay={0.15}>
             <p style={{
               fontSize: 'clamp(13px, 1.6vw, 15px)',
-              color: 'rgba(255,255,255,0.65)',
+              color: '#7A5C43',
               maxWidth: '580px',
               margin: '0 auto',
               lineHeight: 1.6,
-              fontWeight: 300,
+              fontWeight: 400,
             }}>
               Glimpses into our cozy inside corners, open-air patio breezes, handcrafted brews, and unforgettable memories.
             </p>
@@ -119,8 +122,8 @@ export const GallerySection: React.FC = () => {
             position: 'relative',
             borderRadius: '28px',
             padding: 'clamp(32px, 5vw, 48px) clamp(16px, 3vw, 32px)',
-            border: '1.5px solid rgba(167, 235, 242, 0.2)',
-            boxShadow: '0 20px 60px rgba(0,0,0,0.65), inset 0 0 40px rgba(0,0,0,0.5)',
+            border: '2px solid #D4A72C',
+            boxShadow: '0 20px 60px rgba(74, 51, 37, 0.12), inset 0 0 40px rgba(255, 248, 220, 0.4)',
             overflow: 'hidden',
           }}
         >
@@ -138,20 +141,20 @@ export const GallerySection: React.FC = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              background: '#011026',
-              border: '1px solid rgba(167,235,242,0.25)',
+              background: '#FFFDF5',
+              border: '1.5px solid #D4A72C',
               borderRadius: '50px',
-              padding: '6px 18px',
-              boxShadow: '0 4px 18px rgba(0,0,0,0.4)',
+              padding: '7px 20px',
+              boxShadow: '0 4px 18px rgba(74, 51, 37, 0.08)',
             }}>
-              <Sparkles size={11} color="#A7EBF2" />
+              <Sparkles size={12} color="#E8893A" />
               <p style={{
                 margin: 0,
-                fontSize: '10px',
+                fontSize: '11px',
                 fontWeight: 700,
                 letterSpacing: '0.14em',
                 textTransform: 'uppercase',
-                color: '#A7EBF2',
+                color: '#4A3325',
                 fontFamily: '"Outfit", sans-serif',
               }}>
                 📎 Suspended Polaroid Photo Display • Tap to Flip
@@ -159,7 +162,7 @@ export const GallerySection: React.FC = () => {
             </div>
           </div>
 
-          {/* 8 Polaroids in a clean responsive grid (4 columns on desktop, 2 on mobile) */}
+          {/* 8 Polaroids in a clean responsive grid */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',

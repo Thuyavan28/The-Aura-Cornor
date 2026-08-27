@@ -57,7 +57,7 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
       particleCount: 36,
       spread: 60,
       origin: { x, y },
-      colors: ['#A7EBF2', '#54ACBF', '#ff4d6d', '#ffd166'],
+      colors: ['#D4A72C', '#E8893A', '#FFE9A8', '#4A3325'],
       disableForReducedMotion: true,
     });
     if (onToggleLike) onToggleLike(item.id);
@@ -86,7 +86,7 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
           position: 'fixed',
           inset: 0,
           zIndex: 100,
-          backgroundColor: 'rgba(1, 14, 34, 0.92)',
+          backgroundColor: 'rgba(74, 51, 37, 0.88)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           display: 'flex',
@@ -108,9 +108,9 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             width: '44px',
             height: '44px',
             borderRadius: '50%',
-            background: 'rgba(255, 255, 255, 0.08)',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
-            color: '#fff',
+            background: 'rgba(255, 253, 245, 0.2)',
+            border: '1px solid rgba(255, 253, 245, 0.3)',
+            color: '#FFFDF5',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -118,8 +118,8 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             zIndex: 110,
             transition: 'all 0.2s ease',
           }}
-          onMouseEnter={e => { e.currentTarget.style.background = '#A7EBF2'; e.currentTarget.style.color = '#000'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'; e.currentTarget.style.color = '#fff'; }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#FFE9A8'; e.currentTarget.style.color = '#4A3325'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255, 253, 245, 0.2)'; e.currentTarget.style.color = '#FFFDF5'; }}
         >
           <X size={20} />
         </button>
@@ -137,9 +137,9 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             width: '48px',
             height: '48px',
             borderRadius: '50%',
-            background: 'rgba(0, 0, 0, 0.65)',
-            border: '1px solid rgba(167, 235, 242, 0.25)',
-            color: '#A7EBF2',
+            background: 'rgba(74, 51, 37, 0.8)',
+            border: '1px solid #D4A72C',
+            color: '#FFE9A8',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -147,8 +147,8 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             zIndex: 110,
             transition: 'all 0.2s ease',
           }}
-          onMouseEnter={e => { e.currentTarget.style.background = '#26658C'; e.currentTarget.style.color = '#fff'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.65)'; e.currentTarget.style.color = '#A7EBF2'; }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#E8893A'; e.currentTarget.style.color = '#FFFDF5'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(74, 51, 37, 0.8)'; e.currentTarget.style.color = '#FFE9A8'; }}
         >
           <ChevronLeft size={24} />
         </button>
@@ -166,9 +166,9 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             width: '48px',
             height: '48px',
             borderRadius: '50%',
-            background: 'rgba(0, 0, 0, 0.65)',
-            border: '1px solid rgba(167, 235, 242, 0.25)',
-            color: '#A7EBF2',
+            background: 'rgba(74, 51, 37, 0.8)',
+            border: '1px solid #D4A72C',
+            color: '#FFE9A8',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -176,8 +176,8 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             zIndex: 110,
             transition: 'all 0.2s ease',
           }}
-          onMouseEnter={e => { e.currentTarget.style.background = '#26658C'; e.currentTarget.style.color = '#fff'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.65)'; e.currentTarget.style.color = '#A7EBF2'; }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#E8893A'; e.currentTarget.style.color = '#FFFDF5'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(74, 51, 37, 0.8)'; e.currentTarget.style.color = '#FFE9A8'; }}
         >
           <ChevronRight size={24} />
         </button>
@@ -195,24 +195,24 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             width: '100%',
             maxHeight: '90vh',
             overflowY: 'auto',
-            background: '#ffffff',
+            background: '#FFFDF5',
             borderRadius: '24px',
-            boxShadow: '0 25px 70px rgba(0,0,0,0.6), 0 0 40px rgba(84, 172, 191, 0.2)',
+            boxShadow: '0 25px 70px rgba(74, 51, 37, 0.4), 0 0 40px rgba(212, 167, 44, 0.2)',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            color: '#0f172a',
+            color: '#4A3325',
             position: 'relative',
-            border: '2px solid rgba(167, 235, 242, 0.4)',
+            border: '2px solid #D4A72C',
           }}
         >
           {/* Top Washi Tape Decoration */}
-          <div className="washi-tape-accent washi-tape-teal" style={{ top: '-13px' }} />
+          <div className="washi-tape-accent" style={{ top: '-13px' }} />
 
           {/* Left Column: Big Image inside authentic polaroid frame */}
           <div style={{
             padding: '24px',
-            background: '#f8fafc',
-            borderRight: '1px solid rgba(0,0,0,0.06)',
+            background: '#FAF3E0',
+            borderRight: '1px solid #E8D3B0',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -223,9 +223,9 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
               maxWidth: '460px',
               borderRadius: '16px',
               overflow: 'hidden',
-              boxShadow: '0 12px 30px rgba(0,0,0,0.18)',
+              boxShadow: '0 12px 30px rgba(74, 51, 37, 0.15)',
               position: 'relative',
-              backgroundColor: '#000',
+              backgroundColor: '#E8D3B0',
             }}>
               <img
                 src={item.imageUrl}
@@ -244,9 +244,10 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
                 left: '12px',
                 padding: '4px 10px',
                 borderRadius: '50px',
-                background: 'rgba(0,0,0,0.7)',
+                background: 'rgba(255, 253, 245, 0.92)',
                 backdropFilter: 'blur(8px)',
-                color: '#A7EBF2',
+                color: '#4A3325',
+                border: '1px solid #D4A72C',
                 fontSize: '11px',
                 fontWeight: 700,
                 textTransform: 'uppercase',
@@ -254,7 +255,7 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
                 alignItems: 'center',
                 gap: '5px',
               }}>
-                <Sparkles size={12} />
+                <Sparkles size={12} color="#E8893A" />
                 <span>{item.category || 'Aura Corner'}</span>
               </div>
             </div>
@@ -263,7 +264,7 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             <div style={{
               marginTop: '16px',
               fontSize: '12px',
-              color: '#64748b',
+              color: '#7A5C43',
               fontWeight: 600,
               fontFamily: '"Outfit", sans-serif',
             }}>
@@ -292,26 +293,28 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
                   gap: '6px',
                   padding: '4px 12px',
                   borderRadius: '50px',
-                  background: 'rgba(38,101,140,0.08)',
-                  color: '#26658C',
+                  background: '#FFE9A8',
+                  color: '#4A3325',
+                  border: '1px solid #D4A72C',
                   fontSize: '11px',
                   fontWeight: 700,
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                 }}>
-                  <Camera size={13} />
+                  <Camera size={13} color="#E8893A" />
                   <span>The Aura Corner Memory Wall</span>
                 </div>
 
                 <div style={{
-                  border: '1.5px dashed #54ACBF',
+                  border: '1.5px dashed #D4A72C',
                   borderRadius: '4px',
                   padding: '3px 8px',
                   fontSize: '10px',
                   fontWeight: 800,
-                  color: '#54ACBF',
+                  color: '#D4A72C',
                   letterSpacing: '0.08em',
                   transform: 'rotate(2deg)',
+                  background: 'rgba(255, 233, 168, 0.4)',
                 }}>
                   CHENNAI • 5.0 ⭐
                 </div>
@@ -322,7 +325,7 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
                 fontFamily: '"Playfair Display", serif',
                 fontSize: 'clamp(22px, 3vw, 30px)',
                 fontWeight: 700,
-                color: '#0f172a',
+                color: '#4A3325',
                 lineHeight: 1.2,
                 margin: '0 0 10px',
               }}>
@@ -331,19 +334,20 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
 
               {/* Handwritten Note Highlight */}
               <div style={{
-                background: '#fefce8',
-                borderLeft: '4px solid #eab308',
+                background: '#FFE9A8',
+                borderLeft: '4px solid #E8893A',
                 padding: '14px 16px',
                 borderRadius: '0 12px 12px 0',
                 margin: '0 0 18px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                boxShadow: '0 2px 8px rgba(74, 51, 37, 0.05)',
               }}>
                 <p style={{
                   fontFamily: '"Caveat", cursive',
                   fontSize: '22px',
                   lineHeight: 1.35,
-                  color: '#1e293b',
+                  color: '#4A3325',
                   margin: 0,
+                  fontWeight: 600,
                 }}>
                   "{item.handwrittenCaption}"
                 </p>
@@ -353,7 +357,7 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
               <p style={{
                 fontSize: '14px',
                 lineHeight: 1.7,
-                color: '#475569',
+                color: '#7A5C43',
                 margin: '0 0 20px',
                 fontFamily: '"Outfit", sans-serif',
               }}>
@@ -362,12 +366,12 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
 
               {/* Metadata Pills */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#64748b' }}>
-                  <Calendar size={14} color="#26658C" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#7A5C43' }}>
+                  <Calendar size={14} color="#E8893A" />
                   <span>{item.date} {item.time && `• ${item.time}`}</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#64748b' }}>
-                  <MapPin size={14} color="#26658C" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#7A5C43' }}>
+                  <MapPin size={14} color="#E8893A" />
                   <span>{item.location}</span>
                 </div>
               </div>
@@ -383,13 +387,13 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
                       gap: '4px',
                       padding: '4px 10px',
                       borderRadius: '50px',
-                      background: '#f1f5f9',
-                      color: '#334155',
+                      background: '#FFE9A8',
+                      color: '#7A5C43',
                       fontSize: '11px',
-                      fontWeight: 600,
+                      fontWeight: 700,
                     }}
                   >
-                    <Tag size={10} />
+                    <Tag size={10} color="#E8893A" />
                     <span>{tag}</span>
                   </span>
                 ))}
@@ -402,7 +406,7 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
               alignItems: 'center',
               justifyContent: 'space-between',
               paddingTop: '16px',
-              borderTop: '1px solid rgba(0,0,0,0.08)',
+              borderTop: '1px solid #E8D3B0',
               gap: '12px',
             }}>
               <button
@@ -414,16 +418,17 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
                   gap: '8px',
                   padding: '10px 20px',
                   borderRadius: '50px',
-                  background: isLiked ? 'rgba(255, 77, 109, 0.12)' : '#000',
-                  border: isLiked ? '1.5px solid #ff4d6d' : 'none',
-                  color: isLiked ? '#ff4d6d' : '#A7EBF2',
+                  background: isLiked ? 'rgba(232, 137, 58, 0.15)' : '#E8893A',
+                  border: isLiked ? '1.5px solid #E8893A' : 'none',
+                  color: isLiked ? '#E8893A' : '#FFFDF5',
                   fontSize: '13px',
                   fontWeight: 700,
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
+                  boxShadow: '0 4px 14px rgba(232, 137, 58, 0.3)',
                 }}
               >
-                <Heart size={16} fill={isLiked ? '#ff4d6d' : 'currentColor'} />
+                <Heart size={16} fill={isLiked ? '#E8893A' : 'currentColor'} />
                 <span>{item.likes + (isLiked ? 1 : 0)} Likes</span>
               </button>
 
@@ -438,15 +443,15 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
                     gap: '6px',
                     padding: '10px 16px',
                     borderRadius: '50px',
-                    background: '#f1f5f9',
-                    border: '1px solid rgba(0,0,0,0.08)',
-                    color: '#334155',
+                    background: '#FFE9A8',
+                    border: '1px solid #D4A72C',
+                    color: '#4A3325',
                     fontSize: '12px',
                     fontWeight: 700,
                     cursor: 'pointer',
                   }}
                 >
-                  <Share2 size={14} />
+                  <Share2 size={14} color="#E8893A" />
                   <span>Share</span>
                 </button>
               </div>

@@ -121,17 +121,17 @@ function App() {
             position: 'fixed', bottom: '28px', right: '28px', zIndex: 40,
             display: 'flex', alignItems: 'center', gap: '10px',
             padding: '14px 24px', borderRadius: '50px',
-            background: '#000', color: '#A7EBF2',
-            border: '1.5px solid rgba(167,235,242,0.3)',
-            boxShadow: '0 8px 30px rgba(0,0,0,0.4), 0 0 20px rgba(167,235,242,0.15)',
+            background: '#FFFDF5', color: '#4A3325',
+            border: '1.5px solid #D4A72C',
+            boxShadow: '0 8px 30px rgba(74,51,37,0.2), 0 0 20px rgba(212,167,44,0.25)',
             cursor: 'pointer',
             fontFamily: '"Outfit", sans-serif', fontSize: '13px', fontWeight: 700,
           }}
         >
           <span>🛒 {cartItems.length} items</span>
-          <span style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 400 }}>·</span>
-          <span style={{ fontFamily: '"Playfair Display", serif', fontSize: '16px', fontWeight: 700 }}>₹{cartTotal}</span>
-          <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#A7EBF2', boxShadow: '0 0 8px #A7EBF2', animation: 'pulse 2s infinite' }} />
+          <span style={{ color: '#7A5C43', fontWeight: 400 }}>·</span>
+          <span style={{ fontFamily: '"Playfair Display", serif', fontSize: '16px', fontWeight: 700, color: '#E8893A' }}>₹{cartTotal}</span>
+          <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#E8893A', boxShadow: '0 0 8px #E8893A', animation: 'pulse 2s infinite' }} />
         </motion.button>
       )}
 

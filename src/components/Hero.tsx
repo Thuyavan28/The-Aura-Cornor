@@ -10,7 +10,7 @@ interface HeroProps {
   onOpenReservation: () => void;
 }
 
-/* ─── User-provided Signature Blue Coffee Art Cup ───────────────────────── */
+/* ─── Signature Coffee Art Cup ──────────────────────────────────────────── */
 const HERO_COFFEE_IMG = heroCupImg;
 
 /* ─── Floating glow dot ─────────────────────────────────────────────────── */
@@ -21,8 +21,8 @@ const GlowDot: React.FC<{ x: string; y: string; size: number; delay: number }> =
     style={{
       position: 'absolute', left: x, top: y,
       width: size, height: size, borderRadius: '50%',
-      background: 'rgba(167,235,242,0.85)',
-      boxShadow: `0 0 ${size * 3}px rgba(167,235,242,0.6)`,
+      background: 'rgba(255, 233, 168, 0.9)',
+      boxShadow: `0 0 ${size * 3}px rgba(232, 137, 58, 0.8)`,
       pointerEvents: 'none', zIndex: 4,
     }}
     animate={{ opacity: [0, 1, 0], scale: [0, 1, 0], y: [0, -50] }}
@@ -30,32 +30,65 @@ const GlowDot: React.FC<{ x: string; y: string; size: number; delay: number }> =
   />
 );
 
-/* ─── Wave SVG ──────────────────────────────────────────────────────────── */
+/* ─── Wave SVG Background with Dark Orange / Warm Orange Wave ─────────────── */
 const WaveBg: React.FC = () => (
-  <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
-    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
+  <svg
+    viewBox="0 0 1440 900"
+    preserveAspectRatio="xMidYMid slice"
+    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}
+  >
     <defs>
-      <radialGradient id="rg1" cx="75%" cy="50%" r="55%">
-        <stop offset="0%" stopColor="#023859" stopOpacity="0.8" />
-        <stop offset="100%" stopColor="#011C40" stopOpacity="0" />
-      </radialGradient>
-      <radialGradient id="rg2" cx="90%" cy="70%" r="45%">
-        <stop offset="0%" stopColor="#26658C" stopOpacity="0.5" />
-        <stop offset="100%" stopColor="#011C40" stopOpacity="0" />
-      </radialGradient>
-      <radialGradient id="rg3" cx="95%" cy="90%" r="35%">
-        <stop offset="0%" stopColor="#54ACBF" stopOpacity="0.3" />
-        <stop offset="100%" stopColor="#011C40" stopOpacity="0" />
+      {/* Primary Rich Dark Orange Gradient for the right wave */}
+      <linearGradient id="heroDarkOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#F2994A" stopOpacity="0.95" />
+        <stop offset="35%" stopColor="#E8893A" stopOpacity="0.95" />
+        <stop offset="70%" stopColor="#D47225" stopOpacity="0.98" />
+        <stop offset="100%" stopColor="#C8641A" stopOpacity="1" />
+      </linearGradient>
+
+      {/* Layer 2: Deeper Accent Orange */}
+      <linearGradient id="heroDeepOrangeLayer" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#E8893A" stopOpacity="0.85" />
+        <stop offset="100%" stopColor="#B85310" stopOpacity="0.95" />
+      </linearGradient>
+
+      {/* Golden Highlight Rim */}
+      <linearGradient id="heroGoldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#FFE9A8" stopOpacity="0.8" />
+        <stop offset="100%" stopColor="#D4A72C" stopOpacity="0.4" />
+      </linearGradient>
+
+      {/* Soft ambient radial in the center */}
+      <radialGradient id="heroCenterRadial" cx="80%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#FFE9A8" stopOpacity="0.4" />
+        <stop offset="100%" stopColor="transparent" stopOpacity="0" />
       </radialGradient>
     </defs>
-    <ellipse cx="1120" cy="420" rx="460" ry="420" fill="url(#rg1)" />
-    <ellipse cx="1320" cy="620" rx="320" ry="300" fill="url(#rg2)" />
-    <ellipse cx="1400" cy="800" rx="200" ry="180" fill="url(#rg3)" />
 
-    <path d="M880 0 C 980 140 840 300 960 420 C 1080 540 1240 420 1340 580 C 1420 700 1380 840 1440 900 L1440 0Z"
-      fill="#023859" fillOpacity="0.45" />
-    <path d="M1020 0 C 1120 120 1000 260 1100 380 C 1200 500 1360 400 1420 560 L1440 560 1440 0Z"
-      fill="#26658C" fillOpacity="0.22" />
+    {/* Ambient radial glow under cup */}
+    <ellipse cx="1120" cy="460" rx="420" ry="380" fill="url(#heroCenterRadial)" />
+
+    {/* Secondary flowing wave layer */}
+    <path
+      d="M 940 0 C 1040 160, 860 360, 990 520 C 1100 660, 1260 740, 1440 820 L 1440 0 Z"
+      fill="url(#heroDeepOrangeLayer)"
+      opacity="0.6"
+    />
+
+    {/* Main Organic Curved Right Section (Marked with red line by user) */}
+    <path
+      d="M 820 0 C 930 170, 750 350, 880 520 C 970 650, 1160 670, 1370 740 C 1410 755, 1440 840, 1440 900 L 1440 0 Z"
+      fill="url(#heroDarkOrangeGrad)"
+    />
+
+    {/* Elegant Gold Accent Outline Curve */}
+    <path
+      d="M 820 0 C 930 170, 750 350, 880 520 C 970 650, 1160 670, 1370 740 C 1410 755, 1440 840, 1440 900"
+      fill="none"
+      stroke="#FFE9A8"
+      strokeWidth="3"
+      strokeOpacity="0.65"
+    />
   </svg>
 );
 
@@ -64,12 +97,12 @@ const StatPill: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, tex
   <div style={{
     display: 'flex', alignItems: 'center', gap: '7px',
     padding: '8px 16px', borderRadius: '50px',
-    background: 'rgba(255,255,255,0.06)',
-    border: '1px solid rgba(255,255,255,0.08)',
-    backdropFilter: 'blur(8px)',
+    background: '#FFFDF5',
+    border: '1.5px solid #E8D3B0',
+    boxShadow: '0 2px 10px rgba(74, 51, 37, 0.06)',
   }}>
     {icon}
-    <span style={{ fontFamily: '"Outfit", sans-serif', fontSize: '11px', fontWeight: 500, color: 'rgba(255,255,255,0.85)' }}>{text}</span>
+    <span style={{ fontFamily: '"Outfit", sans-serif', fontSize: '11px', fontWeight: 600, color: '#4A3325' }}>{text}</span>
   </div>
 );
 
@@ -122,7 +155,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
   return (
     <section id="hero" style={{
       position: 'relative', minHeight: '100vh',
-      background: 'linear-gradient(140deg, #010e22 0%, #011830 45%, #011C40 100%)',
+      background: 'linear-gradient(140deg, #FFF8DC 0%, #FFFDF5 45%, #F7EEDB 100%)',
       overflow: 'hidden', display: 'flex', flexDirection: 'column',
     }}>
       <WaveBg />
@@ -149,12 +182,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
             transition={{ duration: 0.6, delay: 0.15, ease }}
             style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}
           >
-            <div style={{ width: '28px', height: '2px', background: 'linear-gradient(90deg, #A7EBF2, transparent)', borderRadius: '2px' }} />
+            <div style={{ width: '28px', height: '3px', background: 'linear-gradient(90deg, #E8893A, #D4A72C)', borderRadius: '2px' }} />
             <span style={{
               fontFamily: '"Outfit", sans-serif',
-              fontSize: '11px', fontWeight: 700, letterSpacing: '0.25em',
-              textTransform: 'uppercase', color: '#A7EBF2',
-              textShadow: '0 0 14px rgba(167,235,242,0.6)',
+              fontSize: '11px', fontWeight: 800, letterSpacing: '0.25em',
+              textTransform: 'uppercase', color: '#E8893A',
             }}>
               Chennai's Finest Lounge Café
             </span>
@@ -168,9 +200,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
             <h1 style={{
               fontFamily: '"Playfair Display", serif',
               fontSize: 'clamp(42px, 7.5vw, 92px)',
-              fontWeight: 700, color: '#fff', lineHeight: 0.95,
+              fontWeight: 700, color: '#4A3325', lineHeight: 0.95,
               margin: '0 0 4px', letterSpacing: '-0.025em',
-              textShadow: '0 4px 40px rgba(0,0,0,0.5)',
             }}>
               The Aura
             </h1>
@@ -179,9 +210,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
               fontSize: 'clamp(42px, 7.5vw, 92px)',
               fontWeight: 400, fontStyle: 'italic', lineHeight: 0.95,
               margin: '0 0 20px', letterSpacing: '-0.025em',
-              background: 'linear-gradient(135deg, #A7EBF2 0%, #54ACBF 55%, #26658C 100%)',
+              background: 'linear-gradient(135deg, #E8893A 0%, #D47225 50%, #C8641A 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-              filter: 'drop-shadow(0 0 20px rgba(167,235,242,0.45))',
             }}>
               Corner
             </h1>
@@ -193,8 +223,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
             transition={{ duration: 0.65, delay: 0.35, ease }}
             style={{
               fontFamily: '"Outfit", sans-serif',
-              fontSize: 'clamp(13px, 1.6vw, 15px)', fontWeight: 300, lineHeight: 1.8,
-              color: 'rgba(255,255,255,0.7)', maxWidth: '490px', margin: '0 0 24px',
+              fontSize: 'clamp(13px, 1.6vw, 15px)', fontWeight: 400, lineHeight: 1.8,
+              color: '#7A5C43', maxWidth: '490px', margin: '0 0 24px',
             }}
           >
             A stylish café where great taste meets a relaxing atmosphere. Enjoy artisanal coffee, handcrafted boba, sizzling loaded fries, gourmet bowls, and delicious pasta, all served in a warm and inviting setting.
@@ -208,11 +238,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
             style={{ display: 'flex', gap: '8px', marginBottom: '28px', flexWrap: 'wrap' }}
           >
             <StatPill
-              icon={<>{[1,2,3,4,5].map(i => <Star key={i} size={10} color="#fbbf24" fill="#fbbf24" />)}</>}
+              icon={<>{[1,2,3,4,5].map(i => <Star key={i} size={11} color="#D4A72C" fill="#D4A72C" />)}</>}
               text="5.0 (8 Google reviews)"
             />
-            <StatPill icon={<MapPin size={12} color="#54ACBF" />} text="Medavakkam, Chennai" />
-            <StatPill icon={<Clock size={12} color="#54ACBF" />} text="11 AM – 11 PM Daily" />
+            <StatPill icon={<MapPin size={13} color="#E8893A" />} text="Medavakkam, Chennai" />
+            <StatPill icon={<Clock size={13} color="#E8893A" />} text="11 AM – 11 PM Daily" />
           </motion.div>
 
           {/* CTA Buttons — from BOTTOM */}
@@ -228,13 +258,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
               whileTap={{ scale: 0.97 }}
               style={{
                 display: 'flex', alignItems: 'center', gap: '8px',
-                padding: '13px 30px', borderRadius: '50px',
-                background: 'linear-gradient(135deg, #26658C 0%, #54ACBF 100%)',
-                border: '1px solid rgba(167,235,242,0.3)',
-                color: '#fff', fontFamily: '"Outfit", sans-serif',
-                fontSize: '12px', fontWeight: 700, letterSpacing: '0.07em',
+                padding: '14px 32px', borderRadius: '50px',
+                background: 'linear-gradient(135deg, #E8893A 0%, #C8641A 100%)',
+                border: 'none',
+                color: '#FFFDF5', fontFamily: '"Outfit", sans-serif',
+                fontSize: '12px', fontWeight: 800, letterSpacing: '0.08em',
                 cursor: 'pointer',
-                boxShadow: '0 8px 30px rgba(38,101,140,0.55), 0 0 20px rgba(167,235,242,0.15)',
+                boxShadow: '0 8px 30px rgba(232,137,58,0.45), 0 0 20px rgba(200,100,26,0.25)',
               }}
             >
               <MessageCircle size={15} />
@@ -247,31 +277,30 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
               style={{
                 display: 'flex', alignItems: 'center', gap: '8px',
                 padding: '13px 26px', borderRadius: '50px',
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(167,235,242,0.22)',
-                color: 'rgba(255,255,255,0.75)',
-                fontFamily: '"Outfit", sans-serif', fontSize: '12px', fontWeight: 600,
+                background: '#FFFDF5',
+                border: '1.5px solid #D4A72C',
+                color: '#4A3325',
+                fontFamily: '"Outfit", sans-serif', fontSize: '12px', fontWeight: 700,
                 textDecoration: 'none', cursor: 'pointer',
                 transition: 'all 0.3s ease',
+                boxShadow: '0 2px 10px rgba(74,51,37,0.06)',
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.color = '#A7EBF2';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(167,235,242,0.5)';
-                (e.currentTarget as HTMLElement).style.background = 'rgba(167,235,242,0.08)';
+                (e.currentTarget as HTMLElement).style.background = '#FFE9A8';
+                (e.currentTarget as HTMLElement).style.borderColor = '#E8893A';
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.75)';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(167,235,242,0.22)';
-                (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.04)';
+                (e.currentTarget as HTMLElement).style.background = '#FFFDF5';
+                (e.currentTarget as HTMLElement).style.borderColor = '#D4A72C';
               }}
             >
               <span>Explore Menu</span>
-              <ArrowRight size={14} />
+              <ArrowRight size={14} color="#E8893A" />
             </motion.a>
           </motion.div>
         </div>
 
-        {/* ─ RIGHT COLUMN: Cup Illustration + Brand Quote ─ */}
+        {/* ─ RIGHT COLUMN: Cup Illustration + Brand Quote on Dark Orange Backdrop ─ */}
         <div style={{
           position: 'relative',
           display: 'flex',
@@ -282,10 +311,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
           {/* Ambient lighting glow */}
           <div style={{
             position: 'absolute',
-            width: 'clamp(280px, 40vw, 450px)',
-            height: 'clamp(280px, 40vw, 450px)',
+            width: 'clamp(280px, 40vw, 460px)',
+            height: 'clamp(280px, 40vw, 460px)',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(84,172,191,0.25) 0%, rgba(2,56,89,0.12) 50%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255,233,168,0.4) 0%, rgba(232,137,58,0.2) 60%, transparent 80%)',
             pointerEvents: 'none',
           }} />
 
@@ -312,13 +341,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
             >
               <img
                 src={HERO_COFFEE_IMG}
-                alt="The Aura Corner Signature Blue Coffee Art"
+                alt="The Aura Corner Signature Warm Coffee Art"
                 style={{
-                  width: 'clamp(180px, 28vw, 320px)',
-                  maxHeight: '440px',
+                  width: 'clamp(210px, 32vw, 360px)',
+                  maxHeight: '460px',
                   objectFit: 'contain',
                   display: 'block',
-                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.65)) drop-shadow(0 0 35px rgba(84,172,191,0.35))',
+                  filter: 'drop-shadow(0 20px 40px rgba(74,51,37,0.35)) drop-shadow(0 0 25px rgba(255,233,168,0.4))',
                 }}
               />
             </motion.div>
@@ -330,14 +359,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
               animate="show"
               transition={{ duration: 0.7, delay: 0.6 }}
               style={{
-                marginTop: '16px',
+                marginTop: '18px',
                 textAlign: 'center',
-                padding: '12px 24px',
+                padding: '12px 26px',
                 borderRadius: '50px',
-                background: 'rgba(1, 28, 64, 0.45)',
-                backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(167,235,242,0.18)',
-                boxShadow: '0 8px 30px rgba(0,0,0,0.35), 0 0 20px rgba(84,172,191,0.1)',
+                background: '#FFFDF5',
+                border: '1.5px solid #D4A72C',
+                boxShadow: '0 12px 35px rgba(74, 51, 37, 0.16), 0 0 25px rgba(212,167,44,0.2)',
                 maxWidth: '340px',
               }}
             >
@@ -347,10 +375,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
                   fontFamily: '"Playfair Display", Georgia, serif',
                   fontStyle: 'italic',
                   fontSize: 'clamp(13px, 1.8vw, 15px)',
-                  fontWeight: 500,
-                  color: '#A7EBF2',
+                  fontWeight: 700,
+                  color: '#4A3325',
                   lineHeight: 1.5,
-                  textShadow: '0 0 16px rgba(167,235,242,0.4)',
                 }}
               >
                 "Where coffee meets calm<br />
@@ -361,7 +388,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
         </div>
       </div>
 
-      {/* ── INFINITE MOVING TICKER ── */}
+      {/* ── INFINITE MOVING TICKER (Vibrant Warm Orange Theme) ── */}
       <motion.div
         variants={fromBottom} initial="hidden" animate="show"
         transition={{ duration: 0.6, delay: 0.7, ease }}
@@ -369,11 +396,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
           position: 'relative',
           zIndex: 20,
           overflow: 'hidden',
-          borderTop: '1px solid rgba(167,235,242,0.12)',
-          background: 'linear-gradient(90deg, #010a18 0%, #01142a 50%, #010a18 100%)',
-          padding: '12px 0',
+          borderTop: '1px solid #C8641A',
+          borderBottom: '1px solid #C8641A',
+          background: 'linear-gradient(90deg, #E8893A 0%, #C8641A 50%, #E8893A 100%)',
+          padding: '13px 0',
           display: 'flex',
           alignItems: 'center',
+          boxShadow: '0 4px 15px rgba(200, 100, 26, 0.25)',
         }}
       >
         <div
@@ -400,14 +429,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
                   fontFamily: '"Playfair Display", Georgia, serif',
                   fontStyle: 'italic',
                   fontSize: '14px',
-                  fontWeight: 500,
-                  color: 'rgba(255,255,255,0.92)',
-                  letterSpacing: '0.02em',
+                  fontWeight: 700,
+                  color: '#FFFDF5',
+                  letterSpacing: '0.03em',
                 }}
               >
                 {text}
               </span>
-              <span style={{ color: '#54ACBF', fontSize: '12px', opacity: 0.75 }}>✦</span>
+              <span style={{ color: '#FFE9A8', fontSize: '13px' }}>✦</span>
             </div>
           ))}
         </div>

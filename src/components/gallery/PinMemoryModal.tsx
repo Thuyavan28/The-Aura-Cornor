@@ -22,7 +22,7 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
   const [selectedCategory, setSelectedCategory] = useState<'inside' | 'outside' | 'coffee' | 'moments'>('coffee');
   const [caption, setCaption] = useState('My unforgettable Aura moment ✨');
   const [author, setAuthor] = useState('');
-  const [washiColor, setWashiColor] = useState<'teal' | 'rose' | 'amber' | 'kraft'>('teal');
+  const [washiColor, setWashiColor] = useState<'gold' | 'rose' | 'amber' | 'kraft'>('gold');
   const [customUrl, setCustomUrl] = useState('');
 
   if (!isOpen) return null;
@@ -52,7 +52,7 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
       particleCount: 70,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#A7EBF2', '#54ACBF', '#ffd166', '#ff4d6d'],
+      colors: ['#D4A72C', '#E8893A', '#FFE9A8', '#4A3325'],
     });
 
     onClose();
@@ -68,7 +68,7 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
           position: 'fixed',
           inset: 0,
           zIndex: 110,
-          backgroundColor: 'rgba(1, 14, 34, 0.88)',
+          backgroundColor: 'rgba(74, 51, 37, 0.85)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
           display: 'flex',
@@ -87,20 +87,20 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
           style={{
             maxWidth: '560px',
             width: '100%',
-            background: '#ffffff',
+            background: '#FFFDF5',
             borderRadius: '24px',
-            boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
-            border: '2px solid rgba(167,235,242,0.4)',
+            boxShadow: '0 20px 60px rgba(74, 51, 37, 0.35)',
+            border: '2px solid #D4A72C',
             overflow: 'hidden',
-            color: '#0f172a',
+            color: '#4A3325',
             position: 'relative',
           }}
         >
           {/* Header */}
           <div style={{
-            background: 'linear-gradient(135deg, #011C40 0%, #023859 100%)',
+            background: 'linear-gradient(135deg, #4A3325 0%, #7A5C43 100%)',
             padding: '24px 28px',
-            color: '#fff',
+            color: '#FFFDF5',
             position: 'relative',
           }}>
             <button
@@ -110,12 +110,12 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
                 position: 'absolute',
                 top: '20px',
                 right: '20px',
-                background: 'rgba(255,255,255,0.1)',
+                background: 'rgba(255,255,255,0.15)',
                 border: 'none',
                 borderRadius: '50%',
                 width: '32px',
                 height: '32px',
-                color: '#fff',
+                color: '#FFFDF5',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -125,15 +125,15 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
               <X size={16} />
             </button>
 
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '4px 10px', borderRadius: '50px', background: 'rgba(167,235,242,0.15)', color: '#A7EBF2', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '8px' }}>
-              <Pin size={11} />
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '4px 10px', borderRadius: '50px', background: '#FFE9A8', color: '#4A3325', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '8px' }}>
+              <Pin size={11} color="#E8893A" />
               <span>Digital Scrapbook</span>
             </div>
 
             <h3 style={{ margin: 0, fontFamily: '"Playfair Display", serif', fontSize: '24px', fontWeight: 700 }}>
               Pin Your Polaroid Memory
             </h3>
-            <p style={{ margin: '6px 0 0', fontSize: '13px', color: 'rgba(255,255,255,0.7)', fontFamily: '"Outfit", sans-serif' }}>
+            <p style={{ margin: '6px 0 0', fontSize: '13px', color: '#E8D3B0', fontFamily: '"Outfit", sans-serif' }}>
               Add your handwritten note and photo to The Aura Corner digital memory wall!
             </p>
           </div>
@@ -142,7 +142,7 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
           <form onSubmit={handleSubmit} style={{ padding: '24px 28px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
             {/* Pick a photo */}
             <div>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#475569', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#4A3325', marginBottom: '8px' }}>
                 1. Select a Cafe Scene
               </label>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
@@ -154,16 +154,16 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
                       cursor: 'pointer',
                       borderRadius: '10px',
                       overflow: 'hidden',
-                      border: selectedPhoto === preset.url && !customUrl ? '3px solid #26658C' : '2px solid transparent',
+                      border: selectedPhoto === preset.url && !customUrl ? '3px solid #E8893A' : '2px solid transparent',
                       position: 'relative',
                       aspectRatio: '1/1',
                       transition: 'all 0.2s ease',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                      boxShadow: '0 2px 8px rgba(74, 51, 37, 0.1)',
                     }}
                   >
                     <img src={preset.url} alt={preset.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     {selectedPhoto === preset.url && !customUrl && (
-                      <div style={{ position: 'absolute', inset: 0, background: 'rgba(38,101,140,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+                      <div style={{ position: 'absolute', inset: 0, background: 'rgba(232, 137, 58, 0.45)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
                         <Check size={18} strokeWidth={3} />
                       </div>
                     )}
@@ -174,7 +174,7 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
 
             {/* Custom Image URL */}
             <div>
-              <label style={{ display: 'block', fontSize: '11px', color: '#64748b', marginBottom: '4px' }}>
+              <label style={{ display: 'block', fontSize: '11px', color: '#7A5C43', marginBottom: '4px', fontWeight: 600 }}>
                 Or paste your own image URL:
               </label>
               <input
@@ -186,17 +186,19 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
                   width: '100%',
                   padding: '9px 14px',
                   borderRadius: '10px',
-                  border: '1px solid #cbd5e1',
+                  border: '1px solid #E8D3B0',
                   fontSize: '13px',
                   fontFamily: '"Outfit", sans-serif',
                   boxSizing: 'border-box',
+                  background: '#FFFDF5',
+                  color: '#4A3325',
                 }}
               />
             </div>
 
             {/* Handwritten Note Input */}
             <div>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#475569', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#4A3325', marginBottom: '8px' }}>
                 2. Handwritten Caption
               </label>
               <input
@@ -210,12 +212,12 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
                   width: '100%',
                   padding: '10px 14px',
                   borderRadius: '10px',
-                  border: '1.5px solid #26658C',
+                  border: '1.5px solid #D4A72C',
                   fontSize: '18px',
                   fontFamily: '"Caveat", cursive',
-                  color: '#1e293b',
+                  color: '#4A3325',
                   boxSizing: 'border-box',
-                  background: '#f8fafc',
+                  background: '#FAF3E0',
                 }}
               />
             </div>
@@ -223,11 +225,11 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
             {/* Washi Tape Color & Author */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#475569', marginBottom: '8px' }}>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#4A3325', marginBottom: '8px' }}>
                   Tape Accent
                 </label>
                 <div style={{ display: 'flex', gap: '8px' }}>
-                  {(['teal', 'rose', 'amber', 'kraft'] as const).map(color => (
+                  {(['gold', 'rose', 'amber', 'kraft'] as const).map(color => (
                     <button
                       key={color}
                       type="button"
@@ -236,11 +238,11 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
                         flex: 1,
                         height: '28px',
                         borderRadius: '6px',
-                        border: washiColor === color ? '2px solid #000' : '1px solid rgba(0,0,0,0.15)',
+                        border: washiColor === color ? '2px solid #4A3325' : '1px solid rgba(74, 51, 37, 0.15)',
                         background:
-                          color === 'teal' ? '#A7EBF2' :
+                          color === 'gold' ? '#D4A72C' :
                           color === 'rose' ? '#ffd1dc' :
-                          color === 'amber' ? '#feecb3' : '#d7c4aa',
+                          color === 'amber' ? '#FFE9A8' : '#E8D3B0',
                         cursor: 'pointer',
                         transform: washiColor === color ? 'scale(1.1)' : 'scale(1)',
                         transition: 'transform 0.15s ease',
@@ -251,7 +253,7 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#475569', marginBottom: '8px' }}>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#4A3325', marginBottom: '8px' }}>
                   Your Name / Tag
                 </label>
                 <input
@@ -263,10 +265,12 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
                     width: '100%',
                     padding: '8px 12px',
                     borderRadius: '8px',
-                    border: '1px solid #cbd5e1',
+                    border: '1px solid #E8D3B0',
                     fontSize: '13px',
                     fontFamily: '"Outfit", sans-serif',
                     boxSizing: 'border-box',
+                    background: '#FFFDF5',
+                    color: '#4A3325',
                   }}
                 />
               </div>
@@ -280,23 +284,23 @@ export const PinMemoryModal: React.FC<PinMemoryModalProps> = ({ isOpen, onClose,
                 width: '100%',
                 padding: '14px',
                 borderRadius: '50px',
-                background: '#000',
-                color: '#A7EBF2',
+                background: '#E8893A',
+                color: '#FFFDF5',
                 fontSize: '13px',
                 fontWeight: 700,
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                border: '1.5px solid rgba(167,235,242,0.4)',
+                border: 'none',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '8px',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+                boxShadow: '0 8px 24px rgba(232, 137, 58, 0.35)',
                 transition: 'all 0.2s ease',
               }}
-              onMouseEnter={e => { e.currentTarget.style.background = '#26658C'; e.currentTarget.style.color = '#fff'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#000'; e.currentTarget.style.color = '#A7EBF2'; }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#D4A72C'; e.currentTarget.style.color = '#4A3325'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#E8893A'; e.currentTarget.style.color = '#FFFDF5'; }}
             >
               <Sparkles size={16} />
               <span>Pin to Memory Wall</span>

@@ -37,29 +37,29 @@ export const SignaturePicks: React.FC<SignaturePicksProps> = ({ favorites, onTog
   };
 
   return (
-    <section id="picks" style={{ backgroundColor: '#050810', padding: '100px 0', overflow: 'hidden', position: 'relative' }}>
-      {/* Subtle background accent */}
-      <div style={{ position: 'absolute', top: '50%', left: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'rgba(38,101,140,0.12)', filter: 'blur(100px)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', bottom: '-10%', right: '-5%', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(84,172,191,0.08)', filter: 'blur(80px)', pointerEvents: 'none' }} />
+    <section id="picks" style={{ backgroundColor: '#FFFDF5', padding: '100px 0', overflow: 'hidden', position: 'relative' }}>
+      {/* Subtle background accents */}
+      <div style={{ position: 'absolute', top: '50%', left: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'rgba(232, 137, 58, 0.08)', filter: 'blur(100px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: '-10%', right: '-5%', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(212, 167, 44, 0.08)', filter: 'blur(80px)', pointerEvents: 'none' }} />
 
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 10 }}>
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '56px', gap: '24px', flexWrap: 'wrap' }}>
           <div>
             <Reveal direction="left">
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '5px 14px', borderRadius: '50px', border: '1px solid rgba(167,235,242,0.2)', background: 'rgba(167,235,242,0.04)', marginBottom: '16px' }}>
-                <Flame size={12} color="#A7EBF2" fill="#A7EBF2" />
-                <span style={{ fontFamily: '"Outfit", sans-serif', fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#A7EBF2' }}>Chef's Bestsellers</span>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '5px 14px', borderRadius: '50px', border: '1px solid #D4A72C', background: '#FFE9A8', marginBottom: '16px' }}>
+                <Flame size={12} color="#E8893A" fill="#E8893A" />
+                <span style={{ fontFamily: '"Outfit", sans-serif', fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#4A3325' }}>Chef's Bestsellers</span>
               </div>
             </Reveal>
             <Reveal direction="left" delay={0.1}>
-              <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 700, color: '#fff', margin: 0, letterSpacing: '-0.02em' }}>
+              <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 700, color: '#4A3325', margin: 0, letterSpacing: '-0.02em' }}>
                 Signature{' '}
-                <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#A7EBF2' }}>Picks</span>
+                <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#D4A72C' }}>Picks</span>
               </h2>
             </Reveal>
             <Reveal direction="left" delay={0.15}>
-              <p style={{ fontFamily: '"Outfit", sans-serif', fontSize: '14px', color: 'rgba(255,255,255,0.45)', marginTop: '10px', maxWidth: '480px' }}>
+              <p style={{ fontFamily: '"Outfit", sans-serif', fontSize: '14px', color: '#7A5C43', marginTop: '10px', maxWidth: '480px' }}>
                 Handcrafted crowd favorites recommended by our patrons and local guides. Drag to explore.
               </p>
             </Reveal>
@@ -70,13 +70,15 @@ export const SignaturePicks: React.FC<SignaturePicksProps> = ({ favorites, onTog
               {(['left', 'right'] as const).map(dir => (
                 <button key={dir} onClick={() => scroll(dir)} style={{
                   width: '46px', height: '46px', borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(167,235,242,0.18)',
-                  color: '#A7EBF2', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  background: '#FFFDF5',
+                  border: '1px solid #E8D3B0',
+                  color: '#4A3325', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
                   transition: 'all 0.25s ease',
+                  boxShadow: '0 2px 8px rgba(74, 51, 37, 0.05)',
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.background = '#26658C'; e.currentTarget.style.borderColor = '#54ACBF'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(167,235,242,0.18)'; }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#FFE9A8'; e.currentTarget.style.borderColor = '#D4A72C'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = '#FFFDF5'; e.currentTarget.style.borderColor = '#E8D3B0'; }}
+                  aria-label={`Scroll ${dir}`}
                 >
                   {dir === 'left' ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
                 </button>
@@ -112,13 +114,14 @@ export const SignaturePicks: React.FC<SignaturePicksProps> = ({ favorites, onTog
                 style={{
                   flexShrink: 0, width: '300px',
                   borderRadius: '24px',
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.07)',
+                  background: '#FFFDF5',
+                  border: '1px solid #E8D3B0',
                   overflow: 'hidden',
                   scrollSnapAlign: 'start',
                   transition: 'all 0.4s ease',
+                  boxShadow: '0 4px 20px rgba(74, 51, 37, 0.06)',
                 }}
-                whileHover={{ y: -8, borderColor: 'rgba(167,235,242,0.3)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}
+                whileHover={{ y: -8, borderColor: '#D4A72C', boxShadow: '0 20px 40px rgba(74, 51, 37, 0.12)' }}
               >
                 {/* Image */}
                 <div style={{ position: 'relative', height: '200px', overflow: 'hidden' }}>
@@ -130,16 +133,15 @@ export const SignaturePicks: React.FC<SignaturePicksProps> = ({ favorites, onTog
                     onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.08)')}
                     onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
                   />
-                  <div className="img-overlay" />
 
                   {/* Category badge */}
-                  <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(8px)', padding: '4px 12px', borderRadius: '50px', border: '1px solid rgba(167,235,242,0.2)' }}>
-                    <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#A7EBF2' }}>{item.category}</span>
+                  <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(255,253,245,0.92)', backdropFilter: 'blur(8px)', padding: '4px 12px', borderRadius: '50px', border: '1px solid #D4A72C' }}>
+                    <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4A3325' }}>{item.category}</span>
                   </div>
 
                   {/* Veg indicator */}
-                  <div style={{ position: 'absolute', top: '12px', right: '44px', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(0,0,0,0.7)', border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: item.diet === 'veg' ? '#34d399' : '#f87171' }} />
+                  <div style={{ position: 'absolute', top: '12px', right: '44px', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(255,253,245,0.92)', border: '1px solid #E8D3B0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: item.diet === 'veg' ? '#16a34a' : '#dc2626' }} />
                   </div>
 
                   {/* Heart */}
@@ -148,38 +150,39 @@ export const SignaturePicks: React.FC<SignaturePicksProps> = ({ favorites, onTog
                     style={{
                       position: 'absolute', top: '8px', right: '8px',
                       width: '32px', height: '32px', borderRadius: '50%',
-                      background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(8px)',
-                      border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      color: isFav ? '#f87171' : '#94a3b8',
+                      background: 'rgba(255,253,245,0.92)', backdropFilter: 'blur(8px)',
+                      border: '1px solid #E8D3B0', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      color: isFav ? '#dc2626' : '#7A5C43',
                       transition: 'all 0.2s ease',
                     }}
+                    aria-label="Save to favorites"
                   >
-                    <Heart size={14} fill={isFav ? '#f87171' : 'none'} />
+                    <Heart size={14} fill={isFav ? '#dc2626' : 'none'} />
                   </button>
                 </div>
 
                 {/* Content */}
                 <div style={{ padding: '20px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                    <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#54ACBF' }}>{item.tagline}</span>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.05)', padding: '3px 8px', borderRadius: '50px' }}>
-                      <Star size={10} color="#fbbf24" fill="#fbbf24" />
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#fbbf24' }}>{item.rating.toFixed(1)}</span>
+                    <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#E8893A' }}>{item.tagline}</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#FFE9A8', padding: '3px 8px', borderRadius: '50px' }}>
+                      <Star size={10} color="#D4A72C" fill="#D4A72C" />
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#4A3325' }}>{item.rating.toFixed(1)}</span>
                     </div>
                   </div>
 
-                  <h3 style={{ fontFamily: '"Playfair Display", serif', fontSize: '18px', fontWeight: 700, color: '#fff', margin: '0 0 8px', lineHeight: 1.3 }}>
+                  <h3 style={{ fontFamily: '"Playfair Display", serif', fontSize: '18px', fontWeight: 700, color: '#4A3325', margin: '0 0 8px', lineHeight: 1.3 }}>
                     {item.name}
                   </h3>
 
-                  <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, margin: '0 0 18px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                  <p style={{ fontSize: '12px', color: '#7A5C43', lineHeight: 1.6, margin: '0 0 18px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                     {item.description}
                   </p>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '14px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #E8D3B0', paddingTop: '14px' }}>
                     <div>
-                      <p style={{ margin: 0, fontSize: '9px', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Price</p>
-                      <p style={{ margin: 0, fontFamily: '"Playfair Display", serif', fontSize: '22px', fontWeight: 700, color: '#A7EBF2' }}>₹{item.price}</p>
+                      <p style={{ margin: 0, fontSize: '9px', color: '#7A5C43', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Price</p>
+                      <p style={{ margin: 0, fontFamily: '"Playfair Display", serif', fontSize: '22px', fontWeight: 700, color: '#D4A72C' }}>₹{item.price}</p>
                     </div>
                     <button
                       onClick={() => onAddToCart(item)}
@@ -197,7 +200,7 @@ export const SignaturePicks: React.FC<SignaturePicksProps> = ({ favorites, onTog
         </div>
 
         <Reveal direction="up" delay={0.2}>
-          <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '11px', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>
+          <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '11px', color: '#7A5C43', letterSpacing: '0.1em' }}>
             ← drag or use arrows to scroll →
           </p>
         </Reveal>

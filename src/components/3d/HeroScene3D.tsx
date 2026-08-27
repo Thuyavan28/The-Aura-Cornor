@@ -33,7 +33,7 @@ export const HeroScene3D: React.FC = () => {
     // 1. Outer Glass (Transparent cylinder with frosted/glow rim)
     const glassGeometry = new THREE.CylinderGeometry(1.2, 0.9, 2.8, 32, 1, true);
     const glassMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x54ACBF,
+      color: 0xD4A72C,
       transparent: true,
       opacity: 0.35,
       roughness: 0.1,
@@ -49,7 +49,7 @@ export const HeroScene3D: React.FC = () => {
     // Glass Base
     const baseGeometry = new THREE.CylinderGeometry(0.9, 0.9, 0.15, 32);
     const baseMaterial = new THREE.MeshStandardMaterial({
-      color: 0x26658C,
+      color: 0xE8893A,
       roughness: 0.2,
       metalness: 0.5,
       transparent: true,
@@ -62,8 +62,8 @@ export const HeroScene3D: React.FC = () => {
     // Glass Glowing Rim
     const rimGeometry = new THREE.TorusGeometry(1.2, 0.04, 16, 64);
     const rimMaterial = new THREE.MeshStandardMaterial({
-      color: 0xA7EBF2,
-      emissive: 0x54ACBF,
+      color: 0xD4A72C,
+      emissive: 0xE8893A,
       emissiveIntensity: 0.8,
       roughness: 0.1,
     });
@@ -75,8 +75,8 @@ export const HeroScene3D: React.FC = () => {
     // 2. Liquid inside (Layered gradient effect)
     const liquidGeometry = new THREE.CylinderGeometry(1.15, 0.86, 2.4, 32);
     const liquidMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x023859,
-      emissive: 0x26658C,
+      color: 0xE8893A,
+      emissive: 0xD4A72C,
       emissiveIntensity: 0.4,
       transparent: true,
       opacity: 0.85,
@@ -91,8 +91,8 @@ export const HeroScene3D: React.FC = () => {
     const iceCubes: THREE.Mesh[] = [];
     const iceGeo = new THREE.BoxGeometry(0.55, 0.55, 0.55);
     const iceMat = new THREE.MeshPhysicalMaterial({
-      color: 0xA7EBF2,
-      emissive: 0x54ACBF,
+      color: 0xFFFDF5,
+      emissive: 0xFFE9A8,
       emissiveIntensity: 0.2,
       transparent: true,
       opacity: 0.75,
@@ -118,7 +118,7 @@ export const HeroScene3D: React.FC = () => {
     // 4. Glowing Aura Rings orbiting the beverage
     const ringGeo1 = new THREE.TorusGeometry(2.1, 0.015, 16, 100);
     const ringMat1 = new THREE.MeshBasicMaterial({
-      color: 0xA7EBF2,
+      color: 0xD4A72C,
       transparent: true,
       opacity: 0.6,
     });
@@ -129,7 +129,7 @@ export const HeroScene3D: React.FC = () => {
 
     const ringGeo2 = new THREE.TorusGeometry(2.6, 0.012, 16, 100);
     const ringMat2 = new THREE.MeshBasicMaterial({
-      color: 0x54ACBF,
+      color: 0xE8893A,
       transparent: true,
       opacity: 0.4,
     });
@@ -154,7 +154,7 @@ export const HeroScene3D: React.FC = () => {
     particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
 
     const particleMat = new THREE.PointsMaterial({
-      color: 0xA7EBF2,
+      color: 0xFFE9A8,
       size: 0.06,
       transparent: true,
       opacity: 0.65,
@@ -165,18 +165,18 @@ export const HeroScene3D: React.FC = () => {
     scene.add(particles);
 
     // Lighting
-    const ambientLight = new THREE.AmbientLight(0x023859, 1.8);
+    const ambientLight = new THREE.AmbientLight(0xFFE9A8, 1.8);
     scene.add(ambientLight);
 
-    const topCyanLight = new THREE.PointLight(0xA7EBF2, 3.5, 12);
-    topCyanLight.position.set(2, 4, 3);
-    scene.add(topCyanLight);
+    const topGoldLight = new THREE.PointLight(0xD4A72C, 3.5, 12);
+    topGoldLight.position.set(2, 4, 3);
+    scene.add(topGoldLight);
 
-    const rimBlueLight = new THREE.PointLight(0x54ACBF, 4.0, 10);
-    rimBlueLight.position.set(-3, -1, -2);
-    scene.add(rimBlueLight);
+    const rimOrangeLight = new THREE.PointLight(0xE8893A, 4.0, 10);
+    rimOrangeLight.position.set(-3, -1, -2);
+    scene.add(rimOrangeLight);
 
-    const backDeepLight = new THREE.DirectionalLight(0x26658C, 2.0);
+    const backDeepLight = new THREE.DirectionalLight(0x7A5C43, 2.0);
     backDeepLight.position.set(0, 3, -4);
     scene.add(backDeepLight);
 
@@ -268,19 +268,19 @@ export const HeroScene3D: React.FC = () => {
 
       {/* Layered cinematic glow & badge */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-luna-sky/20 blur-3xl -z-10 animate-pulse-slow" />
-        <div className="w-48 h-48 rounded-full bg-luna-ice/15 blur-2xl -z-10 translate-x-12 -translate-y-8" />
+        <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-[#FFE9A8]/30 blur-3xl -z-10 animate-pulse-slow" />
+        <div className="w-48 h-48 rounded-full bg-[#E8893A]/20 blur-2xl -z-10 translate-x-12 -translate-y-8" />
       </div>
 
       {/* Interactive floating craft label tag */}
-      <div className="absolute bottom-6 right-6 md:right-12 glass-deep px-4 py-2.5 rounded-2xl border border-luna-ice/30 shadow-glow-sky text-left z-20 animate-float-slow hidden sm:flex items-center gap-3">
+      <div className="absolute bottom-6 right-6 md:right-12 bg-[#FFFDF5]/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-[#D4A72C]/40 shadow-lg text-left z-20 animate-float-slow hidden sm:flex items-center gap-3">
         <span className="relative flex h-3 w-3">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-luna-ice opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-luna-sky"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8893A] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-[#D4A72C]"></span>
         </span>
         <div>
-          <p className="text-[11px] uppercase tracking-widest text-luna-ice font-semibold">Artisanal Bar</p>
-          <p className="text-xs font-medium text-white/90">Signature Cold Brew & Boba</p>
+          <p className="text-[11px] uppercase tracking-widest text-[#E8893A] font-semibold">Artisanal Bar</p>
+          <p className="text-xs font-medium text-[#4A3325]">Signature Cold Brew & Boba</p>
         </div>
       </div>
     </div>

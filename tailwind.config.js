@@ -7,16 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        luna: {
-          ice: '#A7EBF2',
-          sky: '#54ACBF',
-          ocean: '#26658C',
-          deep: '#023859',
-          midnight: '#011C40',
-          cream: '#FAFBFD',
-          creamAlt: '#F0F6F8',
-          cardLight: '#FFFFFF',
-          cardDark: 'rgba(2, 56, 89, 0.65)',
+        aura: {
+          cream: '#FFF8DC',
+          paper: '#E8D3B0',
+          orange: '#E8893A',
+          gold: '#D4A72C',
+          brown: '#4A3325',
+          muted: '#7A5C43',
+          polaroid: '#FFFDF5',
+          pale: '#FFE9A8',
         },
       },
       fontFamily: {
@@ -24,12 +23,12 @@ export default {
         sans: ['"Outfit"', '"Plus Jakarta Sans"', 'sans-serif'],
       },
       boxShadow: {
-        'glow-ice': '0 0 25px -5px rgba(167, 235, 242, 0.45)',
-        'glow-sky': '0 0 30px -5px rgba(84, 172, 191, 0.4)',
-        'glow-ocean': '0 10px 30px -5px rgba(38, 101, 140, 0.5)',
-        'glass-dark': '0 8px 32px 0 rgba(1, 28, 64, 0.37)',
-        'glass-light': '0 8px 32px 0 rgba(38, 101, 140, 0.08)',
-        'soft-float': '0 20px 40px -15px rgba(1, 28, 64, 0.15)',
+        'glow-gold': '0 0 25px -5px rgba(212, 167, 44, 0.45)',
+        'glow-orange': '0 0 30px -5px rgba(232, 137, 58, 0.4)',
+        'glow-warm': '0 10px 30px -5px rgba(74, 51, 37, 0.15)',
+        'glass-paper': '0 8px 32px 0 rgba(74, 51, 37, 0.1)',
+        'glass-dark': '0 8px 32px 0 rgba(74, 51, 37, 0.25)',
+        'soft-float': '0 20px 40px -15px rgba(74, 51, 37, 0.12)',
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',

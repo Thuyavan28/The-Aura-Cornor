@@ -139,13 +139,13 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
     <section
       id="menu"
       style={{
-        backgroundColor: '#011026',
-        color: '#fff',
+        backgroundColor: '#FFF8DC',
+        color: '#4A3325',
         padding: 'clamp(60px, 8vw, 100px) 0',
         position: 'relative',
         overflow: 'hidden',
-        borderTop: '1px solid rgba(167,235,242,0.06)',
-        borderBottom: '1px solid rgba(167,235,242,0.06)',
+        borderTop: '1px solid #E8D3B0',
+        borderBottom: '1px solid #E8D3B0',
       }}
     >
       {/* Background ambient radial gradients */}
@@ -158,7 +158,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
           width: 'clamp(300px, 60vw, 800px)',
           height: '450px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(2,56,89,0.3) 0%, rgba(1,28,64,0.1) 60%, transparent 80%)',
+          background: 'radial-gradient(circle, rgba(255,233,168,0.5) 0%, rgba(232,211,176,0.2) 60%, transparent 80%)',
           pointerEvents: 'none',
         }}
       />
@@ -172,7 +172,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
           zIndex: 10,
         }}
       >
-        {/* ── HEADER (Matching Reference) ────────────────────────────── */}
+        {/* ── HEADER ── */}
         <div
           style={{
             display: 'flex',
@@ -197,7 +197,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 style={{
                   width: '24px',
                   height: '2px',
-                  background: '#A7EBF2',
+                  background: '#D4A72C',
                   borderRadius: '2px',
                 }}
               />
@@ -208,7 +208,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                   fontWeight: 700,
                   letterSpacing: '0.25em',
                   textTransform: 'uppercase',
-                  color: '#A7EBF2',
+                  color: '#D4A72C',
                 }}
               >
                 TAKE YOUR TIME
@@ -221,13 +221,13 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 fontFamily: '"Playfair Display", Georgia, serif',
                 fontSize: 'clamp(38px, 6vw, 76px)',
                 fontWeight: 700,
-                color: '#fff',
+                color: '#4A3325',
                 margin: 0,
                 lineHeight: 1.05,
                 letterSpacing: '-0.02em',
               }}
             >
-              The menu<span style={{ color: '#54ACBF' }}>.</span>
+              The menu<span style={{ color: '#E8893A' }}>.</span>
             </h2>
           </div>
 
@@ -237,9 +237,9 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
               style={{
                 fontFamily: '"Outfit", sans-serif',
                 fontSize: 'clamp(12px, 1.5vw, 13px)',
-                fontWeight: 300,
+                fontWeight: 400,
                 lineHeight: 1.7,
-                color: 'rgba(255,255,255,0.6)',
+                color: '#7A5C43',
                 margin: 0,
               }}
             >
@@ -248,7 +248,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
           </div>
         </div>
 
-        {/* ── CATEGORY TAB BAR + SEARCH ───────────────────────────────── */}
+        {/* ── CATEGORY TAB BAR + SEARCH ── */}
         <div
           className="menu-header-row"
           style={{
@@ -257,7 +257,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
             justifyContent: 'space-between',
             gap: '14px',
             paddingBottom: '18px',
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
+            borderBottom: '1px solid #E8D3B0',
             marginBottom: '36px',
             flexWrap: 'wrap',
           }}
@@ -294,13 +294,13 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
                     border: isActive
-                      ? '1.5px solid #54ACBF'
-                      : '1px solid rgba(255,255,255,0.12)',
+                      ? '1.5px solid #D4A72C'
+                      : '1px solid #E8D3B0',
                     background: isActive
-                      ? '#54ACBF'
-                      : 'rgba(255,255,255,0.03)',
-                    color: isActive ? '#011026' : 'rgba(255,255,255,0.7)',
-                    boxShadow: isActive ? '0 0 16px rgba(84,172,191,0.35)' : 'none',
+                      ? '#D4A72C'
+                      : '#FFFDF5',
+                    color: isActive ? '#4A3325' : '#7A5C43',
+                    boxShadow: isActive ? '0 0 16px rgba(212, 167, 44, 0.35)' : 'none',
                     whiteSpace: 'nowrap',
                     flexShrink: 0,
                   }}
@@ -320,14 +320,14 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
               gap: '8px',
               padding: '7px 16px',
               borderRadius: '4px',
-              border: '1px solid rgba(255,255,255,0.14)',
-              background: 'rgba(255,255,255,0.02)',
+              border: '1px solid #E8D3B0',
+              background: '#FFFDF5',
               minWidth: '180px',
               flex: '1 1 180px',
               maxWidth: '300px',
             }}
           >
-            <Search size={14} color="#54ACBF" />
+            <Search size={14} color="#D4A72C" />
             <input
               type="text"
               placeholder="Search the menu..."
@@ -339,14 +339,14 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 outline: 'none',
                 fontFamily: '"Outfit", sans-serif',
                 fontSize: '12px',
-                color: '#fff',
+                color: '#4A3325',
                 width: '100%',
               }}
             />
           </div>
         </div>
 
-        {/* ── RESPONSIVE MENU DISPLAY (No image effects, pure clean typography) ── */}
+        {/* ── RESPONSIVE MENU DISPLAY ── */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab + searchQuery}
@@ -368,7 +368,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                       fontWeight: 700,
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',
-                      color: '#A7EBF2',
+                      color: '#E8893A',
                       margin: 0,
                     }}
                   >
@@ -376,7 +376,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                   </h3>
                 </div>
 
-                {/* Items in Column — Clean typography with diet dot, dotted leader line, price, actions */}
+                {/* Items in Column */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
                   {col.items.length > 0 ? (
                     col.items.map(item => {
@@ -390,13 +390,13 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                             display: 'flex',
                             alignItems: 'center',
                             padding: '10px 8px',
-                            borderBottom: '1px solid rgba(255,255,255,0.04)',
+                            borderBottom: '1px solid rgba(74, 51, 37, 0.08)',
                             transition: 'all 0.2s ease',
                             borderRadius: '6px',
                             cursor: 'pointer',
                           }}
                           onMouseEnter={e => {
-                            e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.03)';
+                            e.currentTarget.style.backgroundColor = 'rgba(232, 211, 176, 0.3)';
                           }}
                           onMouseLeave={e => {
                             e.currentTarget.style.backgroundColor = 'transparent';
@@ -408,8 +408,8 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                               width: '7px',
                               height: '7px',
                               borderRadius: '50%',
-                              backgroundColor: item.diet === 'veg' ? '#34d399' : '#f87171',
-                              boxShadow: `0 0 6px ${item.diet === 'veg' ? 'rgba(52,211,153,0.6)' : 'rgba(248,113,113,0.6)'}`,
+                              backgroundColor: item.diet === 'veg' ? '#16a34a' : '#dc2626',
+                              boxShadow: `0 0 6px ${item.diet === 'veg' ? 'rgba(22,163,74,0.6)' : 'rgba(220,38,38,0.6)'}`,
                               marginRight: '10px',
                               flexShrink: 0,
                             }}
@@ -420,8 +420,8 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                             style={{
                               fontFamily: '"Outfit", sans-serif',
                               fontSize: 'clamp(13px, 1.5vw, 14px)',
-                              fontWeight: 500,
-                              color: '#fff',
+                              fontWeight: 600,
+                              color: '#4A3325',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
@@ -435,7 +435,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                           <div
                             style={{
                               flex: 1,
-                              borderBottom: '1px dotted rgba(255,255,255,0.15)',
+                              borderBottom: '1px dotted rgba(74, 51, 37, 0.25)',
                               margin: '0 10px',
                               minWidth: '12px',
                             }}
@@ -447,7 +447,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                               fontFamily: '"Playfair Display", Georgia, serif',
                               fontSize: '15px',
                               fontWeight: 700,
-                              color: '#A7EBF2',
+                              color: '#D4A72C',
                               marginRight: '10px',
                               whiteSpace: 'nowrap',
                               flexShrink: 0,
@@ -468,12 +468,12 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                                 border: 'none',
                                 cursor: 'pointer',
                                 padding: '4px',
-                                color: isFav ? '#f87171' : 'rgba(255,255,255,0.2)',
+                                color: isFav ? '#dc2626' : 'rgba(74, 51, 37, 0.3)',
                                 transition: 'color 0.2s',
                               }}
                               aria-label="Save to favorites"
                             >
-                              <Heart size={13} fill={isFav ? '#f87171' : 'none'} />
+                              <Heart size={13} fill={isFav ? '#dc2626' : 'none'} />
                             </button>
 
                             <button
@@ -492,8 +492,9 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                                 fontSize: '10px',
                                 fontWeight: 700,
                                 transition: 'all 0.2s ease',
-                                background: isJustAdded ? '#34d399' : '#26658C',
-                                color: isJustAdded ? '#000' : '#fff',
+                                background: isJustAdded ? '#16a34a' : '#E8893A',
+                                color: '#FFFDF5',
+                                boxShadow: isJustAdded ? 'none' : '0 2px 8px rgba(232, 137, 58, 0.3)',
                               }}
                             >
                               {isJustAdded ? <Check size={11} /> : <Plus size={11} />}
@@ -504,7 +505,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                       );
                     })
                   ) : (
-                    <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '13px', padding: '16px 0' }}>
+                    <p style={{ color: '#7A5C43', fontSize: '13px', padding: '16px 0' }}>
                       No items in this section.
                     </p>
                   )}
@@ -514,7 +515,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
           </motion.div>
         </AnimatePresence>
 
-        {/* ── BOTTOM LEGEND (Matching Reference) ──────────────────────── */}
+        {/* ── BOTTOM LEGEND ── */}
         <div
           style={{
             display: 'flex',
@@ -522,7 +523,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
             gap: '20px',
             marginTop: '40px',
             paddingTop: '20px',
-            borderTop: '1px solid rgba(255,255,255,0.06)',
+            borderTop: '1px solid #E8D3B0',
             flexWrap: 'wrap',
           }}
         >
@@ -532,8 +533,8 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 width: '7px',
                 height: '7px',
                 borderRadius: '50%',
-                backgroundColor: '#34d399',
-                boxShadow: '0 0 6px rgba(52,211,153,0.6)',
+                backgroundColor: '#16a34a',
+                boxShadow: '0 0 6px rgba(22,163,74,0.6)',
               }}
             />
             <span
@@ -543,7 +544,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 fontWeight: 700,
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.5)',
+                color: '#7A5C43',
               }}
             >
               VEGETARIAN
@@ -556,8 +557,8 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 width: '7px',
                 height: '7px',
                 borderRadius: '50%',
-                backgroundColor: '#f87171',
-                boxShadow: '0 0 6px rgba(248,113,113,0.6)',
+                backgroundColor: '#dc2626',
+                boxShadow: '0 0 6px rgba(220,38,38,0.6)',
               }}
             />
             <span
@@ -567,7 +568,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 fontWeight: 700,
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.5)',
+                color: '#7A5C43',
               }}
             >
               NON-VEGETARIAN
@@ -575,12 +576,12 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
           </div>
 
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <Sparkles size={12} color="#54ACBF" />
+            <Sparkles size={12} color="#E8893A" />
             <span
               style={{
                 fontFamily: '"Outfit", sans-serif',
                 fontSize: '11px',
-                color: 'rgba(255,255,255,0.4)',
+                color: '#7A5C43',
               }}
             >
               All prices inclusive of taxes · Handcrafted fresh

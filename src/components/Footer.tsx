@@ -2,7 +2,7 @@ import React from 'react';
 import { Sparkles, MapPin, Clock, UtensilsCrossed, Heart, MessageCircle } from 'lucide-react';
 import { Reveal } from './Reveal';
 
-// Inline Instagram SVG since lucide-react may not export it
+// Inline Instagram SVG
 const InstagramIcon: React.FC<{ size?: number }> = ({ size = 16 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -11,74 +11,73 @@ const InstagramIcon: React.FC<{ size?: number }> = ({ size = 16 }) => (
   </svg>
 );
 
-
 export const Footer: React.FC = () => {
   const year = new Date().getFullYear();
   const whatsappUrl = `https://wa.me/919790921125?text=${encodeURIComponent("Hi! I'd like to book a table at The Aura Corner.")}`;
 
   return (
-    <footer style={{ backgroundColor: '#000', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+    <footer style={{ backgroundColor: '#FAF3E0', color: '#4A3325', position: 'relative', overflow: 'hidden', borderTop: '1px solid #E8D3B0' }}>
       {/* Top gradient blob */}
-      <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '700px', height: '300px', borderRadius: '50%', background: 'rgba(38,101,140,0.1)', filter: 'blur(100px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '700px', height: '300px', borderRadius: '50%', background: 'rgba(255,233,168,0.5)', filter: 'blur(100px)', pointerEvents: 'none' }} />
 
       {/* CTA Banner */}
-      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', padding: 'clamp(48px, 8vw, 80px) clamp(20px, 4vw, 32px)' }}>
+      <div style={{ borderBottom: '1px solid #E8D3B0', padding: 'clamp(48px, 8vw, 80px) clamp(20px, 4vw, 32px)', background: '#FFF8DC' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 10 }}>
           <Reveal direction="up">
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '5px 16px', borderRadius: '50px', border: '1px solid rgba(167,235,242,0.2)', background: 'rgba(167,235,242,0.04)', marginBottom: '20px' }}>
-              <Sparkles size={12} color="#A7EBF2" />
-              <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#A7EBF2', fontFamily: '"Outfit", sans-serif' }}>Your Next Visit Awaits</span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '5px 16px', borderRadius: '50px', border: '1px solid #D4A72C', background: '#FFE9A8', marginBottom: '20px' }}>
+              <Sparkles size={12} color="#E8893A" />
+              <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#4A3325', fontFamily: '"Outfit", sans-serif' }}>Your Next Visit Awaits</span>
             </div>
           </Reveal>
 
           <Reveal direction="up" delay={0.1}>
-            <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: 'clamp(28px, 5vw, 64px)', fontWeight: 700, color: '#fff', margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+            <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: 'clamp(28px, 5vw, 64px)', fontWeight: 700, color: '#4A3325', margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
               Ready to Experience the{' '}
-              <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#A7EBF2' }}>Aura?</span>
+              <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#D4A72C' }}>Aura?</span>
             </h2>
           </Reveal>
 
           <Reveal direction="up" delay={0.2}>
-            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.4)', maxWidth: '480px', margin: '0 auto 36px', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '14px', color: '#7A5C43', maxWidth: '480px', margin: '0 auto 36px', lineHeight: 1.7 }}>
               From that first sip of boba to the last bite of loaded fries — every moment at The Aura Corner is designed to be unforgettable.
             </p>
           </Reveal>
 
           <Reveal direction="up" delay={0.3}>
             <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              {/* Explore Menu — inline hover to keep text light */}
+              {/* Explore Menu */}
               <a
                 href="#menu"
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '8px',
                   padding: '14px 28px', borderRadius: '50px',
-                  background: '#26658C', color: '#fff',
+                  background: '#E8893A', color: '#FFFDF5',
                   fontFamily: '"Outfit", sans-serif', fontSize: '12px',
                   fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
                   textDecoration: 'none', cursor: 'pointer',
                   transition: 'all 0.3s ease',
-                  boxShadow: '0 4px 16px rgba(38,101,140,0.4)',
+                  boxShadow: '0 4px 16px rgba(232, 137, 58, 0.35)',
                 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.background = '#54ACBF';
-                  el.style.color = '#011026';
+                  el.style.background = '#D4A72C';
+                  el.style.color = '#4A3325';
                   el.style.transform = 'scale(1.04)';
-                  el.style.boxShadow = '0 8px 24px rgba(84,172,191,0.5)';
+                  el.style.boxShadow = '0 8px 24px rgba(212, 167, 44, 0.45)';
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.background = '#26658C';
-                  el.style.color = '#fff';
+                  el.style.background = '#E8893A';
+                  el.style.color = '#FFFDF5';
                   el.style.transform = 'scale(1)';
-                  el.style.boxShadow = '0 4px 16px rgba(38,101,140,0.4)';
+                  el.style.boxShadow = '0 4px 16px rgba(232, 137, 58, 0.35)';
                 }}
               >
                 <UtensilsCrossed size={15} />
                 <span>Explore Menu</span>
               </a>
 
-              {/* WhatsApp Book — goes to 9790921125 */}
+              {/* WhatsApp Book */}
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -86,29 +85,30 @@ export const Footer: React.FC = () => {
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '8px',
                   padding: '14px 28px', borderRadius: '50px',
-                  background: 'transparent', color: 'rgba(255,255,255,0.7)',
+                  background: '#FFFDF5', color: '#4A3325',
                   fontFamily: '"Outfit", sans-serif', fontSize: '12px',
                   fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
                   textDecoration: 'none', cursor: 'pointer',
                   transition: 'all 0.3s ease',
-                  border: '1px solid rgba(255,255,255,0.18)',
+                  border: '1px solid #E8D3B0',
+                  boxShadow: '0 2px 10px rgba(74, 51, 37, 0.05)',
                 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.color = '#A7EBF2';
-                  el.style.borderColor = 'rgba(167,235,242,0.45)';
-                  el.style.background = 'rgba(167,235,242,0.06)';
+                  el.style.color = '#4A3325';
+                  el.style.borderColor = '#D4A72C';
+                  el.style.background = '#FFE9A8';
                   el.style.transform = 'scale(1.03)';
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.color = 'rgba(255,255,255,0.7)';
-                  el.style.borderColor = 'rgba(255,255,255,0.18)';
-                  el.style.background = 'transparent';
+                  el.style.color = '#4A3325';
+                  el.style.borderColor = '#E8D3B0';
+                  el.style.background = '#FFFDF5';
                   el.style.transform = 'scale(1)';
                 }}
               >
-                <MessageCircle size={15} />
+                <MessageCircle size={15} color="#E8893A" />
                 <span>Book on WhatsApp</span>
               </a>
             </div>
@@ -125,15 +125,15 @@ export const Footer: React.FC = () => {
             <Reveal direction="left">
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'linear-gradient(135deg, #26658C, #54ACBF)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 20px rgba(84,172,191,0.25)', flexShrink: 0 }}>
-                    <Sparkles size={16} color="#A7EBF2" />
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'linear-gradient(135deg, #D4A72C, #E8893A)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 20px rgba(212,167,44,0.25)', flexShrink: 0 }}>
+                    <Sparkles size={16} color="#FFFDF5" />
                   </div>
                   <div>
-                    <p style={{ margin: 0, fontFamily: '"Playfair Display", serif', fontSize: '18px', fontWeight: 700, color: '#fff', lineHeight: 1 }}>The Aura Corner</p>
-                    <p style={{ margin: 0, fontSize: '9px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#54ACBF', marginTop: '2px' }}>Boutique Lounge &amp; Café</p>
+                    <p style={{ margin: 0, fontFamily: '"Playfair Display", serif', fontSize: '18px', fontWeight: 700, color: '#4A3325', lineHeight: 1 }}>The Aura Corner</p>
+                    <p style={{ margin: 0, fontSize: '9px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#E8893A', marginTop: '2px', fontWeight: 700 }}>Boutique Lounge &amp; Café</p>
                   </div>
                 </div>
-                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, margin: '0 0 20px', maxWidth: '280px' }}>
+                <p style={{ fontSize: '13px', color: '#7A5C43', lineHeight: 1.7, margin: '0 0 20px', maxWidth: '280px' }}>
                   A cozy lounge café in Medavakkam, Chennai, dedicated to crafting memorable moments through food, drink, and ambience.
                 </p>
                 {/* Social icons */}
@@ -147,7 +147,7 @@ export const Footer: React.FC = () => {
                     aria-label="Instagram"
                     title="Instagram @the_aura_corner_2026"
                   >
-                  <InstagramIcon size={16} />
+                    <InstagramIcon size={16} />
                   </a>
                   {/* WhatsApp */}
                   <a
@@ -167,7 +167,7 @@ export const Footer: React.FC = () => {
             {/* Quick Links */}
             <Reveal direction="up" delay={0.1}>
               <div>
-                <h4 style={{ margin: '0 0 20px', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#54ACBF', fontFamily: '"Outfit", sans-serif' }}>Navigation</h4>
+                <h4 style={{ margin: '0 0 20px', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#E8893A', fontFamily: '"Outfit", sans-serif' }}>Navigation</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {[
                     { label: 'Home', href: '#hero' },
@@ -179,9 +179,9 @@ export const Footer: React.FC = () => {
                     { label: 'Location', href: '#location' },
                   ].map(link => (
                     <a key={link.label} href={link.href}
-                      style={{ textDecoration: 'none', fontSize: '13px', color: 'rgba(255,255,255,0.45)', transition: 'color 0.25s ease', fontFamily: '"Outfit", sans-serif' }}
-                      onMouseEnter={e => (e.currentTarget.style.color = '#A7EBF2')}
-                      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
+                      style={{ textDecoration: 'none', fontSize: '13px', color: '#7A5C43', transition: 'color 0.25s ease', fontFamily: '"Outfit", sans-serif', fontWeight: 500 }}
+                      onMouseEnter={e => (e.currentTarget.style.color = '#E8893A')}
+                      onMouseLeave={e => (e.currentTarget.style.color = '#7A5C43')}
                     >
                       {link.label}
                     </a>
@@ -193,13 +193,13 @@ export const Footer: React.FC = () => {
             {/* Menu cats */}
             <Reveal direction="up" delay={0.15}>
               <div>
-                <h4 style={{ margin: '0 0 20px', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#54ACBF', fontFamily: '"Outfit", sans-serif' }}>Menu</h4>
+                <h4 style={{ margin: '0 0 20px', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#E8893A', fontFamily: '"Outfit", sans-serif' }}>Menu</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {['Coffee & Hot Drinks', 'Boba & Cold Drinks', 'Milkshakes', 'Loaded Fries', 'Burgers', 'Gourmet Bowls'].map(item => (
                     <a key={item} href="#menu"
-                      style={{ textDecoration: 'none', fontSize: '13px', color: 'rgba(255,255,255,0.45)', transition: 'color 0.25s ease', fontFamily: '"Outfit", sans-serif' }}
-                      onMouseEnter={e => (e.currentTarget.style.color = '#A7EBF2')}
-                      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
+                      style={{ textDecoration: 'none', fontSize: '13px', color: '#7A5C43', transition: 'color 0.25s ease', fontFamily: '"Outfit", sans-serif', fontWeight: 500 }}
+                      onMouseEnter={e => (e.currentTarget.style.color = '#E8893A')}
+                      onMouseLeave={e => (e.currentTarget.style.color = '#7A5C43')}
                     >
                       {item}
                     </a>
@@ -211,16 +211,16 @@ export const Footer: React.FC = () => {
             {/* Visit info */}
             <Reveal direction="right" delay={0.2}>
               <div>
-                <h4 style={{ margin: '0 0 20px', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#54ACBF', fontFamily: '"Outfit", sans-serif' }}>Visit Us</h4>
+                <h4 style={{ margin: '0 0 20px', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#E8893A', fontFamily: '"Outfit", sans-serif' }}>Visit Us</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   <div style={{ display: 'flex', gap: '10px' }}>
-                    <MapPin size={14} color="#54ACBF" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    <p style={{ margin: 0, fontSize: '12px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>7/518, Velachery Main Rd<br />Medavakkam, Chennai 600100</p>
+                    <MapPin size={14} color="#E8893A" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <p style={{ margin: 0, fontSize: '12px', color: '#7A5C43', lineHeight: 1.6 }}>7/518, Velachery Main Rd<br />Medavakkam, Chennai 600100</p>
                   </div>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                    <Clock size={14} color="#54ACBF" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <Clock size={14} color="#E8893A" style={{ flexShrink: 0, marginTop: '2px' }} />
                     <div>
-                      <p style={{ margin: 0, fontSize: '12px', color: 'rgba(255,255,255,0.45)' }}>Mon–Sun: 11 AM – 11 PM</p>
+                      <p style={{ margin: 0, fontSize: '12px', color: '#7A5C43' }}>Mon–Sun: 11 AM – 11 PM</p>
                     </div>
                   </div>
                   <a
@@ -229,7 +229,7 @@ export const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     style={{
                       display: 'inline-flex', alignItems: 'center', gap: '6px',
-                      fontSize: '12px', fontWeight: 600,
+                      fontSize: '12px', fontWeight: 700,
                       color: '#25D366', textDecoration: 'none',
                       fontFamily: '"Outfit", sans-serif',
                       transition: 'opacity 0.2s',
@@ -246,13 +246,13 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Bottom bar */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-            <p style={{ margin: 0, fontSize: '12px', color: 'rgba(255,255,255,0.25)' }}>
+          <div style={{ borderTop: '1px solid #E8D3B0', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+            <p style={{ margin: 0, fontSize: '12px', color: '#7A5C43' }}>
               © {year} The Aura Corner. All rights reserved.
             </p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: 'rgba(255,255,255,0.25)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#7A5C43' }}>
               <span>Crafted with</span>
-              <Heart size={12} color="#f87171" fill="#f87171" />
+              <Heart size={12} color="#E8893A" fill="#E8893A" />
               <span>in Chennai</span>
             </div>
           </div>

@@ -2,26 +2,29 @@
 
 /* =============================================
    TAILWIND v4 THEME DEFINITION
-   Luna Palette + Premium Typography
+   Warm Aura Palette (Soft Cream, Paper, Gold, Orange, Deep Brown)
    ============================================= */
 @theme {
-  /* Luna Color System */
-  --color-ice: #A7EBF2;
-  --color-sky: #54ACBF;
-  --color-ocean: #26658C;
-  --color-deep: #023859;
-  --color-midnight: #011C40;
+  /* Aura Warm Color System */
+  --color-cream: #FFF8DC;
+  --color-paper: #E8D3B0;
+  --color-orange: #E8893A;
+  --color-gold: #D4A72C;
+  --color-brown: #4A3325;
+  --color-muted: #7A5C43;
+  --color-polaroid: #FFFDF5;
+  --color-pale: #FFE9A8;
 
   /* Font Families */
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Outfit", "Plus Jakarta Sans", sans-serif;
 
   /* Custom Shadows */
-  --shadow-glow-ice: 0 0 30px rgba(167, 235, 242, 0.5);
-  --shadow-glow-sky: 0 0 30px rgba(84, 172, 191, 0.4);
-  --shadow-glow-ocean: 0 10px 40px rgba(38, 101, 140, 0.6);
-  --shadow-float: 0 25px 50px rgba(0, 0, 0, 0.3);
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-glow-gold: 0 0 30px rgba(212, 167, 44, 0.45);
+  --shadow-glow-orange: 0 0 30px rgba(232, 137, 58, 0.4);
+  --shadow-glow-warm: 0 10px 40px rgba(74, 51, 37, 0.2);
+  --shadow-float: 0 25px 50px rgba(74, 51, 37, 0.15);
+  --shadow-card: 0 4px 20px rgba(74, 51, 37, 0.08);
 
   /* Animation Durations */
   --animate-float: floatAnim 6s ease-in-out infinite;
@@ -83,13 +86,14 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background-color: #FFF8DC;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #010e22;
-  color: #fff;
+  background-color: #FFF8DC;
+  color: #4A3325;
   font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -98,12 +102,12 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #010e22; }
-::-webkit-scrollbar-thumb { background: #26658C; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #54ACBF; }
+::-webkit-scrollbar-track { background: #FFF8DC; }
+::-webkit-scrollbar-thumb { background: #E8D3B0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #D4A72C; }
 
 /* Selection */
-::selection { background: #54ACBF; color: #000; }
+::selection { background: #FFE9A8; color: #4A3325; }
 
 /* Typography */
 .font-serif { font-family: "Playfair Display", Georgia, serif; }
@@ -218,7 +222,7 @@ body {
   }
 }
 
-/* Location Map grid — map goes BELOW info on mobile */
+/* Location Map grid */
 .location-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -233,8 +237,6 @@ body {
   }
 }
 
-
-
 /* General button styles */
 .btn-primary {
   display: inline-flex;
@@ -243,8 +245,8 @@ body {
   gap: 8px;
   padding: 14px 32px;
   border-radius: 50px;
-  background: #26658C;
-  color: #fff;
+  background: #E8893A;
+  color: #FFFDF5;
   font-family: "Outfit", sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -254,13 +256,14 @@ body {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   text-decoration: none;
+  box-shadow: 0 4px 18px rgba(232, 137, 58, 0.35);
 }
 
 .btn-primary:hover {
-  background: #54ACBF;
-  color: #011026;
+  background: #D4A72C;
+  color: #4A3325;
   transform: scale(1.04);
-  box-shadow: 0 0 30px rgba(84, 172, 191, 0.5);
+  box-shadow: 0 8px 26px rgba(212, 167, 44, 0.5);
 }
 
 .btn-primary:active { transform: scale(0.97); }
@@ -275,29 +278,30 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.25s ease;
-  background: transparent;
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: #FFFDF5;
+  color: #7A5C43;
+  border: 1px solid #E8D3B0;
   white-space: nowrap;
 }
 
 .pill-btn:hover {
-  color: #A7EBF2;
-  border-color: rgba(167,235,242,0.4);
+  color: #4A3325;
+  border-color: #D4A72C;
+  background: #FFE9A8;
 }
 
 .pill-btn.active {
-  background: #54ACBF;
-  color: #011026;
-  border-color: #54ACBF;
-  box-shadow: 0 0 16px rgba(84, 172, 191, 0.35);
+  background: #D4A72C;
+  color: #4A3325;
+  border-color: #D4A72C;
+  box-shadow: 0 0 16px rgba(212, 167, 44, 0.35);
 }
 
 .reviews-marquee-track:hover {
   animation-play-state: paused !important;
 }
 
-/* Outline button style (used in Footer CTA) */
+/* Outline button style */
 .btn-outline {
   display: inline-flex;
   align-items: center;
@@ -305,27 +309,27 @@ body {
   gap: 8px;
   padding: 14px 32px;
   border-radius: 50px;
-  background: transparent;
-  color: rgba(255,255,255,0.7);
+  background: #FFFDF5;
+  color: #4A3325;
   font-family: "Outfit", sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(74, 51, 37, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .btn-outline:hover {
-  color: #A7EBF2;
-  border-color: rgba(167,235,242,0.45);
-  background: rgba(167,235,242,0.06);
+  color: #4A3325;
+  border-color: #D4A72C;
+  background: #FFE9A8;
   transform: scale(1.03);
 }
 
-/* Social pill button (used in Footer brand) */
+/* Social pill button */
 .social-pill {
   display: inline-flex;
   align-items: center;
@@ -333,18 +337,18 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.5);
+  background: #FFFDF5;
+  border: 1px solid rgba(74, 51, 37, 0.15);
+  color: #7A5C43;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .social-pill:hover {
-  background: rgba(167,235,242,0.1);
-  border-color: rgba(167,235,242,0.3);
-  color: #A7EBF2;
+  background: #FFE9A8;
+  border-color: #D4A72C;
+  color: #4A3325;
   transform: translateY(-2px);
 }
 
@@ -354,14 +358,14 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #26658C, #54ACBF, #A7EBF2);
+  height: 3px;
+  background: linear-gradient(90deg, #D4A72C, #E8893A, #FFE9A8);
   transform-origin: 0%;
   z-index: 9999;
   pointer-events: none;
 }
 
-/* Menu section mobile: make search full-width */
+/* Menu section mobile */
 @media (max-width: 640px) {
   .menu-search-box {
     max-width: 100% !important;
@@ -370,13 +374,6 @@ body {
   .menu-header-row {
     flex-direction: column !important;
     gap: 12px !important;
-  }
-}
-
-/* Hero mobile image: constrain size nicely */
-@media (max-width: 600px) {
-  .hero-body-grid {
-    padding-bottom: 20px !important;
   }
 }
 
@@ -391,31 +388,31 @@ body {
   font-family: 'Reenie Beanie', cursive;
 }
 
-/* Wire Grid / Metal Mesh Wall Pattern (Reference #2) */
+/* Wire Grid Pattern */
 .wire-grid-bg {
-  background-color: #0b1526;
+  background-color: #E8D3B0;
   background-image: 
-    linear-gradient(rgba(167, 235, 242, 0.12) 1.5px, transparent 1.5px),
-    linear-gradient(90deg, rgba(167, 235, 242, 0.12) 1.5px, transparent 1.5px),
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(74, 51, 37, 0.16) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(74, 51, 37, 0.16) 1.5px, transparent 1.5px),
+    linear-gradient(rgba(255, 248, 220, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 248, 220, 0.4) 1px, transparent 1px);
   background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
   background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
 }
 
-/* Light / Warm Wall Grid for Light Mode / Aesthetic Blush Wall */
+/* Warm Wall Grid */
 .blush-wire-grid {
-  background-color: #f7f2ee;
+  background-color: #FFF8DC;
   background-image: 
-    linear-gradient(rgba(180, 160, 150, 0.35) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(180, 160, 150, 0.35) 2px, transparent 2px);
+    linear-gradient(rgba(122, 92, 67, 0.25) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(122, 92, 67, 0.25) 2px, transparent 2px);
   background-size: 60px 60px;
 }
 
-/* Wooden Cafe Desk Texture (Reference #3) */
+/* Warm Cafe Texture */
 .desk-surface-bg {
-  background-color: #12100e;
-  background-image: radial-gradient(circle at 50% 30%, #1e1915 0%, #0d0b0a 100%);
+  background-color: #FAF3E0;
+  background-image: radial-gradient(circle at 50% 30%, #FFF8DC 0%, #E8D3B0 100%);
   position: relative;
 }
 
@@ -434,12 +431,12 @@ body {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(0, 0, 0, 0.15) 20%,
-    rgba(255, 255, 255, 0.06) 40%,
-    rgba(0, 0, 0, 0.25) 60%,
-    rgba(255, 255, 255, 0.03) 80%,
-    rgba(0, 0, 0, 0.2) 100%
+    rgba(255, 248, 220, 0.3) 0%,
+    rgba(74, 51, 37, 0.06) 20%,
+    rgba(255, 233, 168, 0.25) 40%,
+    rgba(74, 51, 37, 0.08) 60%,
+    rgba(255, 248, 220, 0.2) 80%,
+    rgba(74, 51, 37, 0.05) 100%
   );
   pointer-events: none;
 }
@@ -478,16 +475,16 @@ body {
 .polaroid-front {
   z-index: 2;
   transform: rotateY(0deg);
-  background: #ffffff;
-  box-shadow: 0 16px 36px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+  background: #FFFDF5;
+  box-shadow: 0 16px 36px rgba(74, 51, 37, 0.12), 0 4px 12px rgba(74, 51, 37, 0.08);
 }
 
 .polaroid-back {
   transform: rotateY(180deg);
-  background: #fdfbf7;
-  color: #1a1a1a;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+  background: #FFFDF5;
+  color: #4A3325;
+  border: 1px solid rgba(74, 51, 37, 0.1);
+  box-shadow: 0 16px 36px rgba(74, 51, 37, 0.12), 0 4px 12px rgba(74, 51, 37, 0.08);
 }
 
 /* Washi Tape Ribbon */
@@ -498,25 +495,25 @@ body {
   transform: translateX(-50%) rotate(-1.5deg);
   height: 26px;
   width: 110px;
-  background: rgba(245, 235, 200, 0.85);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  border-left: 2px dashed rgba(0,0,0,0.15);
-  border-right: 2px dashed rgba(0,0,0,0.15);
+  background: rgba(255, 233, 168, 0.92);
+  box-shadow: 0 2px 6px rgba(74, 51, 37, 0.15);
+  border-left: 2px dashed rgba(74, 51, 37, 0.2);
+  border-right: 2px dashed rgba(74, 51, 37, 0.2);
   z-index: 30;
   backdrop-filter: blur(2px);
 }
 
-.washi-tape-teal {
-  background: rgba(167, 235, 242, 0.82) !important;
+.washi-tape-gold {
+  background: rgba(212, 167, 44, 0.85) !important;
 }
-.washi-tape-rose {
-  background: rgba(255, 209, 220, 0.85) !important;
+.washi-tape-orange {
+  background: rgba(232, 137, 58, 0.85) !important;
 }
 .washi-tape-amber {
-  background: rgba(254, 236, 179, 0.88) !important;
+  background: rgba(255, 233, 168, 0.92) !important;
 }
 .washi-tape-kraft {
-  background: rgba(215, 196, 170, 0.85) !important;
+  background: rgba(232, 211, 176, 0.9) !important;
 }
 
 /* Metal Binder Clip */
@@ -535,7 +532,7 @@ body {
 .binder-clip-handle {
   width: 22px;
   height: 20px;
-  border: 2.5px solid #d1d5db;
+  border: 2.5px solid #D4A72C;
   border-radius: 8px 8px 0 0;
   border-bottom: none;
   background: transparent;
@@ -545,10 +542,10 @@ body {
 .binder-clip-body {
   width: 38px;
   height: 14px;
-  background: linear-gradient(180deg, #374151 0%, #111827 100%);
+  background: linear-gradient(180deg, #7A5C43 0%, #4A3325 100%);
   border-radius: 3px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.3);
-  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 3px 8px rgba(74, 51, 37, 0.35), inset 0 1px 1px rgba(255,255,255,0.3);
+  border: 1px solid rgba(212, 167, 44, 0.3);
 }
 
 /* Torn paper edge effect */
@@ -562,8 +559,6 @@ body {
   left: 0;
   right: 0;
   height: 6px;
-  background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%);
+  background: radial-gradient(circle, transparent, transparent 50%, #FFFDF5 50%, #FFFDF5 100%);
   background-size: 10px 10px;
 }
-
-

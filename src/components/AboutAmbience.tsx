@@ -3,9 +3,9 @@ import { ShieldCheck, Coffee, HeartHandshake, Compass } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 export const AboutAmbience: React.FC = () => (
-  <section id="about" style={{ backgroundColor: '#fff', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
+  <section id="about" style={{ backgroundColor: '#FFF8DC', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
     {/* Subtle dot pattern */}
-    <div className="organic-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.5, pointerEvents: 'none' }} />
+    <div className="organic-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.3, pointerEvents: 'none' }} />
 
     <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 clamp(20px, 4vw, 32px)', position: 'relative', zIndex: 10 }}>
       <div className="about-grid">
@@ -17,12 +17,12 @@ export const AboutAmbience: React.FC = () => (
             <div style={{
               position: 'absolute', inset: '-12px',
               borderRadius: '28px',
-              background: 'linear-gradient(135deg, rgba(84,172,191,0.2), rgba(38,101,140,0.1))',
+              background: 'linear-gradient(135deg, rgba(232,211,176,0.6), rgba(255,233,168,0.4))',
               filter: 'blur(12px)',
               pointerEvents: 'none',
             }} />
 
-            <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '2px solid rgba(84,172,191,0.25)' }}>
+            <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '2px solid #E8D3B0' }}>
               <img
                 src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
                 alt="The Aura Corner Café Ambience"
@@ -32,22 +32,22 @@ export const AboutAmbience: React.FC = () => (
               {/* Overlay info card */}
               <div style={{
                 position: 'absolute', bottom: '20px', left: '20px', right: '20px',
-                background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(16px)',
+                background: 'rgba(255, 253, 245, 0.96)', backdropFilter: 'blur(16px)',
                 borderRadius: '16px', padding: '16px 20px',
                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                border: '1px solid rgba(84,172,191,0.2)',
-                boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
+                border: '1px solid #E8D3B0',
+                boxShadow: '0 8px 30px rgba(74, 51, 37, 0.12)',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Coffee size={18} color="#A7EBF2" />
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'linear-gradient(135deg, #D4A72C, #E8893A)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Coffee size={18} color="#FFFDF5" />
                   </div>
                   <div>
-                    <p style={{ margin: 0, fontSize: '12px', fontWeight: 700, color: '#000', fontFamily: '"Outfit", sans-serif' }}>Peaceful Haven</p>
-                    <p style={{ margin: 0, fontSize: '11px', color: '#64748b' }}>Medavakkam, Chennai</p>
+                    <p style={{ margin: 0, fontSize: '12px', fontWeight: 700, color: '#4A3325', fontFamily: '"Outfit", sans-serif' }}>Peaceful Haven</p>
+                    <p style={{ margin: 0, fontSize: '11px', color: '#7A5C43' }}>Medavakkam, Chennai</p>
                   </div>
                 </div>
-                <div style={{ padding: '6px 12px', borderRadius: '50px', background: '#000', color: '#A7EBF2', fontSize: '11px', fontWeight: 700, letterSpacing: '0.05em' }}>
+                <div style={{ padding: '6px 12px', borderRadius: '50px', background: '#E8893A', color: '#FFFDF5', fontSize: '11px', fontWeight: 700, letterSpacing: '0.05em' }}>
                   5.0 ⭐ Rating
                 </div>
               </div>
@@ -56,16 +56,16 @@ export const AboutAmbience: React.FC = () => (
             {/* Floating mini card */}
             <div className="float-badge" style={{
               position: 'absolute', top: '-16px', right: '-20px',
-              background: '#fff', borderRadius: '16px', padding: '14px 18px',
-              boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
-              border: '1px solid rgba(84,172,191,0.2)',
+              background: '#FFFDF5', borderRadius: '16px', padding: '14px 18px',
+              boxShadow: '0 12px 40px rgba(74, 51, 37, 0.12)',
+              border: '1px solid #E8D3B0',
               display: 'flex', alignItems: 'center', gap: '10px',
               zIndex: 20,
             }}>
-              <Coffee size={20} color="#26658C" />
+              <Coffee size={20} color="#D4A72C" />
               <div>
-                <p style={{ margin: 0, fontSize: '11px', fontWeight: 700, color: '#000', fontFamily: '"Playfair Display", serif' }}>Crafted Daily</p>
-                <p style={{ margin: 0, fontSize: '10px', color: '#64748b' }}>Fresh to order</p>
+                <p style={{ margin: 0, fontSize: '11px', fontWeight: 700, color: '#4A3325', fontFamily: '"Playfair Display", serif' }}>Crafted Daily</p>
+                <p style={{ margin: 0, fontSize: '10px', color: '#7A5C43' }}>Fresh to order</p>
               </div>
             </div>
           </div>
@@ -74,9 +74,9 @@ export const AboutAmbience: React.FC = () => (
         {/* ── Right: Copy ── */}
         <div>
           <Reveal direction="right" delay={0.05}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '5px 14px', borderRadius: '50px', border: '1px solid rgba(38,101,140,0.25)', background: 'rgba(38,101,140,0.06)', marginBottom: '20px' }}>
-              <Compass size={12} color="#26658C" />
-              <span style={{ fontFamily: '"Outfit", sans-serif', fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#26658C' }}>Our Story</span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '5px 14px', borderRadius: '50px', border: '1px solid #D4A72C', background: '#FFE9A8', marginBottom: '20px' }}>
+              <Compass size={12} color="#E8893A" />
+              <span style={{ fontFamily: '"Outfit", sans-serif', fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#4A3325' }}>Our Story</span>
             </div>
           </Reveal>
 
@@ -84,22 +84,22 @@ export const AboutAmbience: React.FC = () => (
             <h2 style={{
               fontFamily: '"Playfair Display", serif',
               fontSize: 'clamp(30px, 4vw, 50px)',
-              fontWeight: 700, color: '#000',
+              fontWeight: 700, color: '#4A3325',
               lineHeight: 1.15, margin: '0 0 24px', letterSpacing: '-0.02em',
             }}>
               Where Calm Meets<br />
-              <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#26658C' }}>Exceptional Taste</span>
+              <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#D4A72C' }}>Exceptional Taste</span>
             </h2>
           </Reveal>
 
           <Reveal direction="right" delay={0.15}>
-            <p style={{ fontSize: '15px', color: '#475569', lineHeight: 1.8, margin: '0 0 16px', fontWeight: 300 }}>
-              <strong style={{ fontWeight: 600, color: '#000' }}>The Aura Corner</strong> was born with a single vision: to create a peaceful, unhurried space where friends can linger, remote workers can recharge, and food lovers can enjoy gourmet meals without paying exorbitant prices.
+            <p style={{ fontSize: '15px', color: '#4A3325', lineHeight: 1.8, margin: '0 0 16px', fontWeight: 400 }}>
+              <strong style={{ fontWeight: 700, color: '#4A3325' }}>The Aura Corner</strong> was born with a single vision: to create a peaceful, unhurried space where friends can linger, remote workers can recharge, and food lovers can enjoy gourmet meals without paying exorbitant prices.
             </p>
           </Reveal>
 
           <Reveal direction="right" delay={0.2}>
-            <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.8, margin: '0 0 32px', fontWeight: 300 }}>
+            <p style={{ fontSize: '14px', color: '#7A5C43', lineHeight: 1.8, margin: '0 0 32px', fontWeight: 400 }}>
               From our signature Peri Peri Maggi and crispy loaded chicken fries to velvety hot chocolates and handcrafted boba blends — everything is cooked to order with uncompromised quality.
             </p>
           </Reveal>
@@ -107,26 +107,26 @@ export const AboutAmbience: React.FC = () => (
           {/* Value Props */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '36px' }}>
             {[
-              { icon: <ShieldCheck size={18} color="#26658C" />, title: 'Pure Quality', desc: 'Top-tier ingredients, cooked fresh every order.' },
-              { icon: <HeartHandshake size={18} color="#26658C" />, title: 'Pocket-Friendly', desc: '₹200–400 avg with generous portions.' },
+              { icon: <ShieldCheck size={18} color="#E8893A" />, title: 'Pure Quality', desc: 'Top-tier ingredients, cooked fresh every order.' },
+              { icon: <HeartHandshake size={18} color="#E8893A" />, title: 'Pocket-Friendly', desc: '₹200–400 avg with generous portions.' },
             ].map((item, i) => (
               <Reveal key={i} direction={i % 2 === 0 ? 'left' : 'right'} delay={0.25 + i * 0.1}>
                 <div style={{
-                  padding: '20px', borderRadius: '18px', background: '#fff',
-                  border: '1px solid rgba(0,0,0,0.07)',
-                  boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
+                  padding: '20px', borderRadius: '18px', background: '#FFFDF5',
+                  border: '1px solid #E8D3B0',
+                  boxShadow: '0 2px 12px rgba(74, 51, 37, 0.05)',
                   display: 'flex', gap: '14px', alignItems: 'flex-start',
                   transition: 'all 0.3s ease',
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(84,172,191,0.35)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(38,101,140,0.08)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(0,0,0,0.07)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(0,0,0,0.04)'; }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = '#D4A72C'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(74, 51, 37, 0.1)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = '#E8D3B0'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(74, 51, 37, 0.05)'; }}
                 >
-                  <div style={{ padding: '10px', borderRadius: '12px', background: 'rgba(38,101,140,0.07)', flexShrink: 0 }}>
+                  <div style={{ padding: '10px', borderRadius: '12px', background: '#FFE9A8', flexShrink: 0 }}>
                     {item.icon}
                   </div>
                   <div>
-                    <h4 style={{ margin: '0 0 4px', fontSize: '13px', fontWeight: 700, color: '#000', fontFamily: '"Outfit", sans-serif' }}>{item.title}</h4>
-                    <p style={{ margin: 0, fontSize: '12px', color: '#94a3b8', lineHeight: 1.6 }}>{item.desc}</p>
+                    <h4 style={{ margin: '0 0 4px', fontSize: '13px', fontWeight: 700, color: '#4A3325', fontFamily: '"Outfit", sans-serif' }}>{item.title}</h4>
+                    <p style={{ margin: 0, fontSize: '12px', color: '#7A5C43', lineHeight: 1.6 }}>{item.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -134,7 +134,6 @@ export const AboutAmbience: React.FC = () => (
           </div>
 
           <Reveal direction="right" delay={0.35}>
-            {/* Explore Full Menu — text stays WHITE/TEAL on hover, NEVER goes black */}
             <a
               href="#menu"
               style={{
@@ -143,8 +142,8 @@ export const AboutAmbience: React.FC = () => (
                 gap: '10px',
                 padding: '14px 32px',
                 borderRadius: '50px',
-                background: '#000',
-                color: '#fff',
+                background: '#E8893A',
+                color: '#FFFDF5',
                 fontFamily: '"Outfit", sans-serif',
                 fontSize: '12px',
                 fontWeight: 700,
@@ -152,22 +151,22 @@ export const AboutAmbience: React.FC = () => (
                 textTransform: 'uppercase',
                 textDecoration: 'none',
                 cursor: 'pointer',
-                transition: 'background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
-                boxShadow: '0 4px 18px rgba(0,0,0,0.25)',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 18px rgba(232, 137, 58, 0.35)',
               }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLAnchorElement;
-                el.style.background = '#26658C';
-                el.style.color = '#A7EBF2';
+                el.style.background = '#D4A72C';
+                el.style.color = '#4A3325';
                 el.style.transform = 'scale(1.05) translateY(-2px)';
-                el.style.boxShadow = '0 10px 30px rgba(38,101,140,0.45)';
+                el.style.boxShadow = '0 10px 30px rgba(212, 167, 44, 0.45)';
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLAnchorElement;
-                el.style.background = '#000';
-                el.style.color = '#fff';
+                el.style.background = '#E8893A';
+                el.style.color = '#FFFDF5';
                 el.style.transform = 'scale(1) translateY(0)';
-                el.style.boxShadow = '0 4px 18px rgba(0,0,0,0.25)';
+                el.style.boxShadow = '0 4px 18px rgba(232, 137, 58, 0.35)';
               }}
             >
               <span>Explore Full Menu</span>

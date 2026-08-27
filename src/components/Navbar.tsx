@@ -56,14 +56,14 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
           transition: 'background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease',
           padding: scrolled ? '10px 0' : '16px 0',
           background: scrolled
-            ? 'rgba(0,0,0,0.97)'
-            : 'rgba(1,14,34,0.85)',
+            ? 'rgba(255, 248, 220, 0.96)'
+            : 'rgba(255, 248, 220, 0.88)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           borderBottom: scrolled
-            ? '1px solid rgba(167,235,242,0.1)'
-            : '1px solid rgba(167,235,242,0.05)',
-          boxShadow: scrolled ? '0 4px 30px rgba(0,0,0,0.5)' : 'none',
+            ? '1px solid #E8D3B0'
+            : '1px solid rgba(232, 211, 176, 0.6)',
+          boxShadow: scrolled ? '0 4px 20px rgba(74, 51, 37, 0.08)' : 'none',
         }}
       >
         <div style={{
@@ -79,19 +79,19 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
           <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', flexShrink: 0 }}>
             <div style={{
               width: '38px', height: '38px', borderRadius: '50%',
-              background: 'linear-gradient(135deg, #26658C, #54ACBF)',
+              background: 'linear-gradient(135deg, #D4A72C, #E8893A)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              boxShadow: '0 0 20px rgba(84,172,191,0.35)',
+              boxShadow: '0 0 20px rgba(212, 167, 44, 0.35)',
               flexShrink: 0,
             }}>
-              <Coffee size={18} color="#011026" strokeWidth={2.5} />
+              <Coffee size={18} color="#FFFDF5" strokeWidth={2.5} />
             </div>
             <div>
               <div style={{
                 fontFamily: '"Playfair Display", serif',
                 fontSize: 'clamp(15px, 2vw, 18px)',
                 fontWeight: 700,
-                color: '#fff',
+                color: '#4A3325',
                 lineHeight: 1,
                 whiteSpace: 'nowrap',
               }}>
@@ -102,9 +102,10 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
                 fontSize: '9px',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: '#54ACBF',
+                color: '#E8893A',
                 marginTop: '2px',
                 whiteSpace: 'nowrap',
+                fontWeight: 600,
               }}>
                 Boutique Lounge &amp; Café
               </div>
@@ -118,11 +119,12 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
               display: 'flex',
               alignItems: 'center',
               gap: '2px',
-              background: 'rgba(255,255,255,0.04)',
+              background: 'rgba(255, 253, 245, 0.85)',
               backdropFilter: 'blur(12px)',
               padding: '5px 10px',
               borderRadius: '50px',
-              border: '1px solid rgba(255,255,255,0.07)',
+              border: '1px solid #E8D3B0',
+              boxShadow: '0 2px 8px rgba(74, 51, 37, 0.04)',
             }}
           >
             {links.map(link => (
@@ -133,14 +135,14 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
                   padding: '7px 15px',
                   borderRadius: '50px',
                   fontSize: '11px',
-                  fontWeight: 600,
+                  fontWeight: 700,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                   textDecoration: 'none',
                   transition: 'all 0.25s ease',
-                  background: activeSection === link.id ? '#A7EBF2' : 'transparent',
-                  color: activeSection === link.id ? '#000' : 'rgba(255,255,255,0.72)',
-                  boxShadow: activeSection === link.id ? '0 0 15px rgba(167,235,242,0.4)' : 'none',
+                  background: activeSection === link.id ? '#D4A72C' : 'transparent',
+                  color: activeSection === link.id ? '#4A3325' : '#7A5C43',
+                  boxShadow: activeSection === link.id ? '0 0 15px rgba(212, 167, 44, 0.35)' : 'none',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -157,23 +159,30 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
               style={{
                 position: 'relative',
                 width: '38px', height: '38px', borderRadius: '50%',
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(167,235,242,0.15)',
-                color: '#A7EBF2',
+                background: '#FFFDF5',
+                border: '1px solid #E8D3B0',
+                color: '#E8893A',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 flexShrink: 0,
+                boxShadow: '0 2px 6px rgba(74, 51, 37, 0.05)',
               }}
-              onMouseEnter={e => (e.currentTarget.style.background = 'rgba(167,235,242,0.12)')}
-              onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.06)')}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = '#FFE9A8';
+                e.currentTarget.style.borderColor = '#D4A72C';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = '#FFFDF5';
+                e.currentTarget.style.borderColor = '#E8D3B0';
+              }}
               aria-label="Favorites"
             >
-              <Heart size={15} fill={favoriteCount > 0 ? '#A7EBF2' : 'none'} />
+              <Heart size={16} fill={favoriteCount > 0 ? '#E8893A' : 'none'} />
               {favoriteCount > 0 && (
                 <span style={{
                   position: 'absolute', top: '-4px', right: '-4px',
-                  background: '#54ACBF', color: '#000',
+                  background: '#E8893A', color: '#FFFDF5',
                   fontSize: '9px', fontWeight: 700,
                   width: '16px', height: '16px', borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -193,9 +202,9 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
                 gap: '7px',
                 padding: '9px 20px',
                 borderRadius: '50px',
-                background: 'linear-gradient(135deg, #26658C, #54ACBF)',
-                border: '1px solid rgba(167,235,242,0.25)',
-                color: '#fff',
+                background: 'linear-gradient(135deg, #E8893A, #D4A72C)',
+                border: 'none',
+                color: '#FFFDF5',
                 fontFamily: '"Outfit", sans-serif',
                 fontSize: '11px',
                 fontWeight: 700,
@@ -204,15 +213,15 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 whiteSpace: 'nowrap',
-                boxShadow: '0 4px 18px rgba(38,101,140,0.45)',
+                boxShadow: '0 4px 18px rgba(232, 137, 58, 0.35)',
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'scale(1.04)';
-                e.currentTarget.style.boxShadow = '0 6px 24px rgba(84,172,191,0.5)';
+                e.currentTarget.style.boxShadow = '0 6px 24px rgba(212, 167, 44, 0.45)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.boxShadow = '0 4px 18px rgba(38,101,140,0.45)';
+                e.currentTarget.style.boxShadow = '0 4px 18px rgba(232, 137, 58, 0.35)';
               }}
             >
               <MessageCircle size={13} />
@@ -225,10 +234,10 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
               className="navbar-hamburger"
               style={{
                 padding: '8px',
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.1)',
+                background: '#FFFDF5',
+                border: '1px solid #E8D3B0',
                 borderRadius: '10px',
-                color: '#fff',
+                color: '#4A3325',
                 cursor: 'pointer',
                 display: 'none',
                 alignItems: 'center',
@@ -253,7 +262,7 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
               onClick={() => setMobileOpen(false)}
               style={{
                 position: 'fixed', inset: 0,
-                background: 'rgba(0,0,0,0.75)',
+                background: 'rgba(74, 51, 37, 0.45)',
                 backdropFilter: 'blur(6px)',
                 zIndex: 60,
               }}
@@ -265,11 +274,12 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
               transition={{ type: 'spring', damping: 28, stiffness: 260 }}
               style={{
                 position: 'fixed', top: 0, right: 0, bottom: 0, width: '280px',
-                background: '#000',
-                borderLeft: '1px solid rgba(167,235,242,0.12)',
+                background: '#FFFDF5',
+                borderLeft: '1px solid #E8D3B0',
                 zIndex: 70,
                 display: 'flex', flexDirection: 'column',
                 padding: '24px',
+                boxShadow: '-10px 0 30px rgba(74, 51, 37, 0.15)',
               }}
             >
               {/* Drawer header */}
@@ -277,16 +287,16 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <div style={{
                     width: '32px', height: '32px', borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #26658C, #54ACBF)',
+                    background: 'linear-gradient(135deg, #D4A72C, #E8893A)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>
-                    <Coffee size={15} color="#011026" strokeWidth={2.5} />
+                    <Coffee size={15} color="#FFFDF5" strokeWidth={2.5} />
                   </div>
-                  <span style={{ fontFamily: '"Playfair Display", serif', fontSize: '16px', fontWeight: 700, color: '#fff' }}>Menu</span>
+                  <span style={{ fontFamily: '"Playfair Display", serif', fontSize: '16px', fontWeight: 700, color: '#4A3325' }}>Menu</span>
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}
-                  style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '4px' }}
+                  style={{ background: 'none', border: 'none', color: '#7A5C43', cursor: 'pointer', padding: '4px' }}
                 >
                   <X size={22} />
                 </button>
@@ -305,12 +315,12 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
                       textDecoration: 'none',
                       fontFamily: '"Outfit", sans-serif',
                       fontSize: '14px',
-                      fontWeight: 500,
+                      fontWeight: 600,
                       letterSpacing: '0.04em',
                       transition: 'all 0.25s ease',
-                      background: activeSection === link.id ? 'rgba(167,235,242,0.08)' : 'transparent',
-                      color: activeSection === link.id ? '#A7EBF2' : 'rgba(255,255,255,0.75)',
-                      borderLeft: activeSection === link.id ? '2px solid #A7EBF2' : '2px solid transparent',
+                      background: activeSection === link.id ? '#FFE9A8' : 'transparent',
+                      color: activeSection === link.id ? '#4A3325' : '#7A5C43',
+                      borderLeft: activeSection === link.id ? '3px solid #D4A72C' : '3px solid transparent',
                     }}
                   >
                     {link.label}
@@ -319,13 +329,13 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
               </nav>
 
               {/* Footer info */}
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: '#64748b', marginBottom: '8px' }}>
-                  <MapPin size={12} color="#54ACBF" />
+              <div style={{ borderTop: '1px solid #E8D3B0', paddingTop: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: '#7A5C43', marginBottom: '8px' }}>
+                  <MapPin size={12} color="#E8893A" />
                   <span>Medavakkam, Chennai</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: '#64748b', marginBottom: '16px' }}>
-                  <Clock size={12} color="#54ACBF" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: '#7A5C43', marginBottom: '16px' }}>
+                  <Clock size={12} color="#E8893A" />
                   <span>11 AM – 11 PM Daily</span>
                 </div>
                 <button
@@ -336,15 +346,16 @@ export const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites, 
                     gap: '8px',
                     padding: '13px 20px',
                     borderRadius: '50px',
-                    background: 'linear-gradient(135deg, #26658C, #54ACBF)',
+                    background: 'linear-gradient(135deg, #E8893A, #D4A72C)',
                     border: 'none',
-                    color: '#fff',
+                    color: '#FFFDF5',
                     fontFamily: '"Outfit", sans-serif',
                     fontSize: '12px',
                     fontWeight: 700,
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
                     cursor: 'pointer',
+                    boxShadow: '0 4px 14px rgba(232, 137, 58, 0.35)',
                   }}
                 >
                   <MessageCircle size={14} />

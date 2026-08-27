@@ -8,7 +8,7 @@ export const ConnectSection: React.FC = () => {
   const address = '7/518, Velachery Main Rd, Vijayanagaram, Santhosapuram, Medavakkam, Chennai, Tamil Nadu 600100';
   const whatsappUrl = `https://wa.me/919790921125?text=${encodeURIComponent("Hi! I'd like to connect with The Aura Corner in Medavakkam, Chennai.")}`;
 
-  // Floating background emojis from the reference
+  // Floating background emojis
   const floatingIcons = [
     { emoji: '🍔', top: '15%', left: '4%', size: '28px', delay: 0 },
     { emoji: '🍟', bottom: '18%', left: '5%', size: '26px', delay: 1 },
@@ -21,12 +21,12 @@ export const ConnectSection: React.FC = () => {
     <section
       id="connect"
       style={{
-        backgroundColor: '#010e22',
-        color: '#fff',
+        backgroundColor: '#FFF8DC',
+        color: '#4A3325',
         padding: 'clamp(60px, 8vw, 110px) 0',
         position: 'relative',
         overflow: 'hidden',
-        borderTop: '1px solid rgba(167,235,242,0.06)',
+        borderTop: '1px solid #E8D3B0',
       }}
     >
       {/* Background ambient lighting */}
@@ -38,12 +38,12 @@ export const ConnectSection: React.FC = () => {
           width: '500px',
           height: '500px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(84,172,191,0.18) 0%, rgba(2,56,89,0.1) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(255,233,168,0.55) 0%, rgba(232,211,176,0.2) 50%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
 
-      {/* Floating subtle food icons matching reference */}
+      {/* Floating subtle food icons */}
       {floatingIcons.map((item, idx) => (
         <motion.div
           key={idx}
@@ -56,8 +56,8 @@ export const ConnectSection: React.FC = () => {
             left: item.left,
             right: item.right,
             fontSize: item.size,
-            opacity: 0.22,
-            filter: 'drop-shadow(0 0 10px rgba(167,235,242,0.2))',
+            opacity: 0.25,
+            filter: 'drop-shadow(0 0 10px rgba(212,167,44,0.3))',
             pointerEvents: 'none',
             zIndex: 2,
           }}
@@ -86,12 +86,12 @@ export const ConnectSection: React.FC = () => {
                   gap: '8px',
                   padding: '6px 16px',
                   borderRadius: '50px',
-                  background: 'rgba(167,235,242,0.06)',
-                  border: '1px solid rgba(167,235,242,0.2)',
+                  background: '#FFE9A8',
+                  border: '1px solid #D4A72C',
                   marginBottom: '18px',
                 }}
               >
-                <Sparkles size={13} color="#A7EBF2" />
+                <Sparkles size={13} color="#E8893A" />
                 <span
                   style={{
                     fontFamily: '"Outfit", sans-serif',
@@ -99,7 +99,7 @@ export const ConnectSection: React.FC = () => {
                     fontWeight: 700,
                     letterSpacing: '0.2em',
                     textTransform: 'uppercase',
-                    color: '#A7EBF2',
+                    color: '#4A3325',
                   }}
                 >
                   GET IN TOUCH
@@ -114,7 +114,7 @@ export const ConnectSection: React.FC = () => {
                   fontFamily: '"Outfit", sans-serif',
                   fontSize: 'clamp(36px, 5.5vw, 68px)',
                   fontWeight: 800,
-                  color: '#fff',
+                  color: '#4A3325',
                   lineHeight: 1.05,
                   margin: '0 0 18px',
                   letterSpacing: '-0.02em',
@@ -131,9 +131,9 @@ export const ConnectSection: React.FC = () => {
                 style={{
                   fontFamily: '"Outfit", sans-serif',
                   fontSize: 'clamp(13px, 1.6vw, 15px)',
-                  fontWeight: 300,
+                  fontWeight: 400,
                   lineHeight: 1.8,
-                  color: 'rgba(255,255,255,0.65)',
+                  color: '#7A5C43',
                   maxWidth: '480px',
                   margin: '0 0 32px',
                 }}
@@ -153,7 +153,7 @@ export const ConnectSection: React.FC = () => {
                     alignItems: 'center',
                     gap: '14px',
                     textDecoration: 'none',
-                    color: '#fff',
+                    color: '#4A3325',
                     transition: 'transform 0.2s',
                   }}
                   onMouseEnter={e => (e.currentTarget.style.transform = 'translateX(4px)')}
@@ -164,21 +164,22 @@ export const ConnectSection: React.FC = () => {
                       width: '38px',
                       height: '38px',
                       borderRadius: '50%',
-                      background: 'rgba(239,68,68,0.15)',
+                      background: '#FFE9A8',
+                      border: '1px solid #D4A72C',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
                     }}
                   >
-                    <Phone size={17} color="#ef4444" />
+                    <Phone size={17} color="#E8893A" />
                   </div>
                   <span
                     style={{
                       fontFamily: '"Outfit", sans-serif',
                       fontSize: 'clamp(14px, 1.8vw, 16px)',
-                      fontWeight: 600,
-                      color: 'rgba(255,255,255,0.9)',
+                      fontWeight: 700,
+                      color: '#4A3325',
                     }}
                   >
                     +91 97909 21125
@@ -195,7 +196,7 @@ export const ConnectSection: React.FC = () => {
                     alignItems: 'center',
                     gap: '14px',
                     textDecoration: 'none',
-                    color: '#fff',
+                    color: '#4A3325',
                     transition: 'transform 0.2s',
                   }}
                   onMouseEnter={e => (e.currentTarget.style.transform = 'translateX(4px)')}
@@ -206,21 +207,22 @@ export const ConnectSection: React.FC = () => {
                       width: '38px',
                       height: '38px',
                       borderRadius: '50%',
-                      background: 'rgba(239,68,68,0.15)',
+                      background: '#FFE9A8',
+                      border: '1px solid #D4A72C',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
                     }}
                   >
-                    <Globe size={17} color="#ef4444" />
+                    <Globe size={17} color="#E8893A" />
                   </div>
                   <span
                     style={{
                       fontFamily: '"Outfit", sans-serif',
                       fontSize: 'clamp(14px, 1.8vw, 16px)',
-                      fontWeight: 600,
-                      color: 'rgba(255,255,255,0.9)',
+                      fontWeight: 700,
+                      color: '#4A3325',
                     }}
                   >
                     theauracorner.cafe
@@ -236,7 +238,8 @@ export const ConnectSection: React.FC = () => {
                       width: '38px',
                       height: '38px',
                       borderRadius: '50%',
-                      background: 'rgba(239,68,68,0.15)',
+                      background: '#FFE9A8',
+                      border: '1px solid #D4A72C',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -244,14 +247,14 @@ export const ConnectSection: React.FC = () => {
                       marginTop: '2px',
                     }}
                   >
-                    <MapPin size={17} color="#ef4444" />
+                    <MapPin size={17} color="#E8893A" />
                   </div>
                   <span
                     style={{
                       fontFamily: '"Outfit", sans-serif',
                       fontSize: 'clamp(13px, 1.5vw, 14px)',
-                      fontWeight: 400,
-                      color: 'rgba(255,255,255,0.75)',
+                      fontWeight: 500,
+                      color: '#7A5C43',
                       lineHeight: 1.6,
                       maxWidth: '420px',
                     }}
@@ -275,7 +278,7 @@ export const ConnectSection: React.FC = () => {
                   padding: '15px 32px',
                   borderRadius: '50px',
                   background: '#25D366',
-                  color: '#fff',
+                  color: '#FFFDF5',
                   fontFamily: '"Outfit", sans-serif',
                   fontSize: '13px',
                   fontWeight: 700,
@@ -305,14 +308,14 @@ export const ConnectSection: React.FC = () => {
             <div
               style={{
                 borderRadius: '28px',
-                background: '#040b17',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: '#E8D3B0',
+                border: '2px solid #D4A72C',
                 padding: 'clamp(28px, 4vw, 44px) clamp(20px, 3vw, 36px)',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                boxShadow: '0 24px 60px rgba(0,0,0,0.6), 0 0 40px rgba(84,172,191,0.1)',
+                boxShadow: '0 24px 60px rgba(74, 51, 37, 0.15)',
                 position: 'relative',
               }}
             >
@@ -324,7 +327,7 @@ export const ConnectSection: React.FC = () => {
                   fontWeight: 800,
                   letterSpacing: '0.15em',
                   textTransform: 'uppercase',
-                  color: '#fff',
+                  color: '#4A3325',
                   margin: '0 0 24px',
                 }}
               >
@@ -341,10 +344,10 @@ export const ConnectSection: React.FC = () => {
                   height: 'clamp(160px, 22vw, 220px)',
                   borderRadius: '50%',
                   overflow: 'hidden',
-                  background: '#fff',
+                  background: '#FFFDF5',
                   padding: '6px',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.5), 0 0 40px rgba(167,235,242,0.3)',
-                  border: '2px solid rgba(167,235,242,0.4)',
+                  boxShadow: '0 12px 40px rgba(74, 51, 37, 0.2), 0 0 40px rgba(212,167,44,0.3)',
+                  border: '3px solid #D4A72C',
                   marginBottom: '24px',
                 }}
               >
@@ -366,9 +369,9 @@ export const ConnectSection: React.FC = () => {
                 style={{
                   fontFamily: '"Outfit", sans-serif',
                   fontSize: '13px',
-                  color: '#A7EBF2',
+                  color: '#E8893A',
                   margin: '0 0 6px',
-                  fontWeight: 600,
+                  fontWeight: 700,
                   letterSpacing: '0.05em',
                 }}
               >
@@ -378,9 +381,10 @@ export const ConnectSection: React.FC = () => {
                 style={{
                   fontFamily: '"Outfit", sans-serif',
                   fontSize: '11px',
-                  color: 'rgba(255,255,255,0.4)',
+                  color: '#7A5C43',
                   margin: 0,
                   lineHeight: 1.5,
+                  fontWeight: 500,
                 }}
               >
                 Medavakkam, Chennai
