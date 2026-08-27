@@ -6,7 +6,7 @@ import { Reveal } from './Reveal';
 
 export const ConnectSection: React.FC = () => {
   const address = '7/518, Velachery Main Rd, Vijayanagaram, Santhosapuram, Medavakkam, Chennai, Tamil Nadu 600100';
-  const whatsappUrl = `https://wa.me/919444012345?text=${encodeURIComponent("Hi! I'd like to connect with The Aura Corner in Medavakkam, Chennai.")}`;
+  const whatsappUrl = `https://wa.me/919363642701?text=${encodeURIComponent("Hi! I'd like to connect with The Aura Corner in Medavakkam, Chennai.")}`;
 
   // Floating background emojis from the reference
   const floatingIcons = [
@@ -138,7 +138,7 @@ export const ConnectSection: React.FC = () => {
                   margin: '0 0 32px',
                 }}
               >
-                We're always delighted to welcome you to our cozy corner. Have a question, table reservation, or special occasion? Scan the logo or message us directly on WhatsApp.
+                We’re always delighted to welcome you. Have a question, table reservation, or a special occasion in mind? Message us directly on WhatsApp — we reply fast!
               </p>
             </Reveal>
 
@@ -147,7 +147,7 @@ export const ConnectSection: React.FC = () => {
               {/* Phone */}
               <Reveal direction="left" delay={0.25}>
                 <a
-                  href="tel:+919444012345"
+                  href="tel:+919363642701"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -181,7 +181,7 @@ export const ConnectSection: React.FC = () => {
                       color: 'rgba(255,255,255,0.9)',
                     }}
                   >
-                    +91 94440 12345
+                    +91 93636 42701
                   </span>
                 </a>
               </Reveal>
@@ -331,56 +331,59 @@ export const ConnectSection: React.FC = () => {
                 CONNECT WITH US
               </h3>
 
-              {/* Circular Logo Visual with Gold/Teal Aura Ring */}
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
+              {/* Decorative Circular Logo */}
+              <motion.div
+                animate={{ scale: [1, 1.02, 1], rotate: [0, 1, -1, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                  position: 'relative',
+                  width: 'clamp(160px, 22vw, 220px)',
+                  height: 'clamp(160px, 22vw, 220px)',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  background: '#fff',
+                  padding: '6px',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.5), 0 0 40px rgba(167,235,242,0.3)',
+                  border: '2px solid rgba(167,235,242,0.4)',
+                  marginBottom: '24px',
+                }}
               >
-                <motion.div
-                  whileHover={{ scale: 1.05, rotate: 1 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                <img
+                  src={auraLogo}
+                  alt="The Aura Corner Logo"
                   style={{
-                    position: 'relative',
-                    width: 'clamp(180px, 25vw, 240px)',
-                    height: 'clamp(180px, 25vw, 240px)',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
-                    overflow: 'hidden',
-                    background: '#fff',
-                    padding: '6px',
-                    boxShadow: '0 12px 40px rgba(0,0,0,0.5), 0 0 40px rgba(167,235,242,0.3)',
-                    border: '2px solid rgba(167,235,242,0.4)',
-                    cursor: 'pointer',
-                    marginBottom: '24px',
+                    objectFit: 'cover',
+                    display: 'block',
                   }}
-                >
-                  <img
-                    src={auraLogo}
-                    alt="The Aura Corner Logo"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: '50%',
-                      objectFit: 'cover',
-                      display: 'block',
-                    }}
-                  />
-                </motion.div>
-              </a>
+                />
+              </motion.div>
 
-              {/* Caption */}
+              {/* Social handle / contact info */}
               <p
                 style={{
                   fontFamily: '"Outfit", sans-serif',
-                  fontSize: '12px',
-                  color: 'rgba(255,255,255,0.5)',
+                  fontSize: '13px',
+                  color: '#A7EBF2',
+                  margin: '0 0 6px',
+                  fontWeight: 600,
+                  letterSpacing: '0.05em',
+                }}
+              >
+                @the_aura_corner_2026
+              </p>
+              <p
+                style={{
+                  fontFamily: '"Outfit", sans-serif',
+                  fontSize: '11px',
+                  color: 'rgba(255,255,255,0.4)',
                   margin: 0,
-                  maxWidth: '280px',
                   lineHeight: 1.5,
                 }}
               >
-                Scan or tap with your phone to instantly chat with us on WhatsApp.
+                Medavakkam, Chennai
               </p>
             </div>
           </Reveal>

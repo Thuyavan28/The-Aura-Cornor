@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SignaturePicks } from './components/SignaturePicks';
 import { AboutAmbience } from './components/AboutAmbience';
+import { GallerySection } from './components/GallerySection';
 import { MenuSection } from './components/MenuSection';
 import { ReviewsMarquee } from './components/ReviewsMarquee';
 import { ConnectSection } from './components/ConnectSection';
@@ -58,6 +59,11 @@ function App() {
     });
   }, []);
 
+  const clearCart = useCallback(() => {
+    setCartItems([]);
+    localStorage.removeItem('aura-cart');
+  }, []);
+
   // Framer scroll progress bar
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 160, damping: 30 });
@@ -90,6 +96,7 @@ function App() {
           onAddToCart={addToCart}
         />
         <AboutAmbience />
+        <GallerySection />
         <MenuSection
           favorites={favorites}
           onToggleFavorite={toggleFavorite}
@@ -135,6 +142,7 @@ function App() {
         cartItems={cartItems}
         onToggleFavorite={toggleFavorite}
         onRemoveFromCart={removeFromCart}
+        onClearCart={clearCart}
         allItems={ALL_MENU_ITEMS}
       />
 

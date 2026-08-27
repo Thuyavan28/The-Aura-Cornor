@@ -7,8 +7,8 @@ export const AboutAmbience: React.FC = () => (
     {/* Subtle dot pattern */}
     <div className="organic-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.5, pointerEvents: 'none' }} />
 
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 10 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 clamp(20px, 4vw, 32px)', position: 'relative', zIndex: 10 }}>
+      <div className="about-grid">
 
         {/* ── Left: Image ── */}
         <Reveal direction="left">
@@ -134,7 +134,42 @@ export const AboutAmbience: React.FC = () => (
           </div>
 
           <Reveal direction="right" delay={0.35}>
-            <a href="#menu" className="btn-primary" style={{ background: '#000', display: 'inline-flex' }}>
+            {/* Explore Full Menu — text stays WHITE/TEAL on hover, NEVER goes black */}
+            <a
+              href="#menu"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '14px 32px',
+                borderRadius: '50px',
+                background: '#000',
+                color: '#fff',
+                fontFamily: '"Outfit", sans-serif',
+                fontSize: '12px',
+                fontWeight: 700,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                cursor: 'pointer',
+                transition: 'background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+                boxShadow: '0 4px 18px rgba(0,0,0,0.25)',
+              }}
+              onMouseEnter={e => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.background = '#26658C';
+                el.style.color = '#A7EBF2';
+                el.style.transform = 'scale(1.05) translateY(-2px)';
+                el.style.boxShadow = '0 10px 30px rgba(38,101,140,0.45)';
+              }}
+              onMouseLeave={e => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.background = '#000';
+                el.style.color = '#fff';
+                el.style.transform = 'scale(1) translateY(0)';
+                el.style.boxShadow = '0 4px 18px rgba(0,0,0,0.25)';
+              }}
+            >
               <span>Explore Full Menu</span>
               <span style={{ fontSize: '18px', lineHeight: 1 }}>↓</span>
             </a>

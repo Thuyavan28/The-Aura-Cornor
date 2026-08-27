@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import {
-  Search, MessageCircle, Star, MapPin, Clock,
-  Coffee, ArrowRight
+  MessageCircle, Star, MapPin, Clock,
+  ArrowRight
 } from 'lucide-react';
 import heroCupImg from '../assets/hero-cup-clean.png';
 
@@ -128,111 +128,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
       <WaveBg />
       {dots.map((d, i) => <GlowDot key={i} {...d} />)}
 
-      {/* ── INTEGRATED NAVBAR ─────────────────────────────────────────── */}
-      <motion.div
-        variants={fromTop}
-        initial="hidden"
-        animate="show"
-        transition={{ duration: 0.6, ease }}
-        style={{
-          position: 'relative', zIndex: 20,
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '20px clamp(20px, 4vw, 64px)',
-          borderBottom: '1px solid rgba(167,235,242,0.06)',
-        }}
-      >
-        {/* Logo with Coffee Cup Icon */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <div style={{
-            width: '42px', height: '42px', borderRadius: '50%', flexShrink: 0,
-            background: 'linear-gradient(135deg, #26658C 0%, #54ACBF 60%, #A7EBF2 100%)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 0 24px rgba(167,235,242,0.6), 0 0 60px rgba(84,172,191,0.3)',
-          }}>
-            <Coffee size={20} color="#011026" strokeWidth={2.5} />
-          </div>
-          <div>
-            <div style={{
-              fontFamily: '"Playfair Display", serif',
-              fontSize: 'clamp(17px, 2.5vw, 20px)', fontWeight: 700, color: '#fff',
-              lineHeight: 1, letterSpacing: '-0.01em',
-              textShadow: '0 0 20px rgba(167,235,242,0.5)',
-            }}>
-              The Aura Corner
-            </div>
-            <div style={{
-              fontFamily: '"Outfit", sans-serif',
-              fontSize: '9px', fontWeight: 600, letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              background: 'linear-gradient(90deg, #A7EBF2, #54ACBF)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              marginTop: '3px',
-            }}>
-              Boutique Lounge & Café
-            </div>
-          </div>
-        </div>
-
-        {/* Desktop Nav Links (Hidden on Mobile) */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '4px' }} className="hide-mobile">
-          {['Home', 'Menu', 'About', 'Reviews', 'Connect', 'Visit'].map((l, i) => (
-            <a key={l} href={`#${l === 'Home' ? 'hero' : l.toLowerCase()}`} style={{
-              padding: '8px 18px', borderRadius: '50px',
-              fontSize: '11px', fontWeight: 600, letterSpacing: '0.06em',
-              textDecoration: 'none',
-              color: i === 0 ? '#A7EBF2' : 'rgba(255,255,255,0.6)',
-              background: i === 0 ? 'rgba(167,235,242,0.08)' : 'transparent',
-              border: i === 0 ? '1px solid rgba(167,235,242,0.25)' : '1px solid transparent',
-              transition: 'all 0.25s ease',
-            }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.color = '#A7EBF2';
-                (e.currentTarget as HTMLElement).style.background = 'rgba(167,235,242,0.06)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.color = i === 0 ? '#A7EBF2' : 'rgba(255,255,255,0.6)';
-                (e.currentTarget as HTMLElement).style.background = i === 0 ? 'rgba(167,235,242,0.08)' : 'transparent';
-              }}
-            >
-              {l}
-            </a>
-          ))}
-        </nav>
-
-        {/* Right Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <a
-            href="#menu"
-            className="hide-mobile"
-            style={{
-              background: 'none', border: 'none', cursor: 'pointer', padding: '8px',
-              color: 'rgba(255,255,255,0.5)', borderRadius: '50%',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              textDecoration: 'none',
-              transition: 'all 0.25s ease',
-            }}
-            onMouseEnter={e => { e.currentTarget.style.color = '#A7EBF2'; e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; }}
-            onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)'; e.currentTarget.style.background = 'none'; }}
-          >
-            <Search size={17} />
-          </a>
-          <button onClick={onOpenReservation} style={{
-            padding: '9px 20px', borderRadius: '50px',
-            background: 'linear-gradient(135deg, #26658C, #54ACBF)',
-            border: '1px solid rgba(167,235,242,0.3)',
-            color: '#fff', fontFamily: '"Outfit", sans-serif',
-            fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em',
-            cursor: 'pointer', transition: 'all 0.3s ease',
-            boxShadow: '0 4px 20px rgba(38,101,140,0.5)',
-            whiteSpace: 'nowrap',
-          }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 6px 28px rgba(84,172,191,0.55)'; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(38,101,140,0.5)'; }}>
-            Book Table
-          </button>
-        </div>
-      </motion.div>
+      {/* Spacer for fixed navbar height */}
+      <div style={{ height: '70px', flexShrink: 0 }} />
 
       {/* ── HERO BODY (Responsive Grid) ────────────────────────────────── */}
       <div
@@ -259,7 +156,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
               textTransform: 'uppercase', color: '#A7EBF2',
               textShadow: '0 0 14px rgba(167,235,242,0.6)',
             }}>
-              Chennai’s Finest Lounge Café
+              Chennai's Finest Lounge Café
             </span>
           </motion.div>
 
@@ -290,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
             </h1>
           </motion.div>
 
-          {/* Updated Tagline Wordings — from BOTTOM */}
+          {/* Tagline — from BOTTOM */}
           <motion.p
             variants={fromBottom} initial="hidden" animate="show"
             transition={{ duration: 0.65, delay: 0.35, ease }}
@@ -382,7 +279,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-          {/* Ambient lighting glow tuned to the image's blue tone */}
+          {/* Ambient lighting glow */}
           <div style={{
             position: 'absolute',
             width: 'clamp(280px, 40vw, 450px)',
@@ -392,7 +289,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
             pointerEvents: 'none',
           }} />
 
-          {/* Pure clean image with smooth parallax */}
+          {/* Cup image with smooth parallax */}
           <motion.div
             ref={imgRef}
             variants={fromRight} initial="hidden" animate="show"
@@ -417,7 +314,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
                 src={HERO_COFFEE_IMG}
                 alt="The Aura Corner Signature Blue Coffee Art"
                 style={{
-                  width: 'clamp(220px, 30vw, 320px)',
+                  width: 'clamp(180px, 28vw, 320px)',
                   maxHeight: '440px',
                   objectFit: 'contain',
                   display: 'block',
@@ -426,7 +323,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
               />
             </motion.div>
 
-            {/* ── QUOTE BELOW IMAGE (Requested by User) ── */}
+            {/* Quote below image */}
             <motion.div
               variants={fromBottom}
               initial="hidden"
@@ -464,7 +361,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
         </div>
       </div>
 
-      {/* ── INFINITE MOVING TICKER (Left to Right, Matching Reference Image 1) ── */}
+      {/* ── INFINITE MOVING TICKER ── */}
       <motion.div
         variants={fromBottom} initial="hidden" animate="show"
         transition={{ duration: 0.6, delay: 0.7, ease }}
@@ -487,7 +384,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
             userSelect: 'none',
           }}
         >
-          {/* Repeat list for seamless infinite looping */}
           {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((text, idx) => (
             <div
               key={idx}

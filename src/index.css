@@ -164,6 +164,28 @@ body {
   }
 }
 
+/* Footer Responsive Grid */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 960px) {
+  .footer-links-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-links-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
 .connect-body-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -177,6 +199,41 @@ body {
     gap: 44px !important;
   }
 }
+
+/* About Ambience grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+  .float-badge {
+    display: none !important;
+  }
+}
+
+/* Location Map grid — map goes BELOW info on mobile */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .location-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+
 
 /* General button styles */
 .btn-primary {
@@ -239,3 +296,265 @@ body {
 .reviews-marquee-track:hover {
   animation-play-state: paused !important;
 }
+
+/* Outline button style (used in Footer CTA) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.18);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  color: #A7EBF2;
+  border-color: rgba(167,235,242,0.45);
+  background: rgba(167,235,242,0.06);
+  transform: scale(1.03);
+}
+
+/* Social pill button (used in Footer brand) */
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-pill:hover {
+  background: rgba(167,235,242,0.1);
+  border-color: rgba(167,235,242,0.3);
+  color: #A7EBF2;
+  transform: translateY(-2px);
+}
+
+/* Scroll progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #26658C, #54ACBF, #A7EBF2);
+  transform-origin: 0%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Menu section mobile: make search full-width */
+@media (max-width: 640px) {
+  .menu-search-box {
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .menu-header-row {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
+/* Hero mobile image: constrain size nicely */
+@media (max-width: 600px) {
+  .hero-body-grid {
+    padding-bottom: 20px !important;
+  }
+}
+
+/* =============================================
+   POLAROID GALLERY & DIGITAL SCRAPBOOK SYSTEM
+   ============================================= */
+.font-handwriting {
+  font-family: 'Caveat', cursive;
+}
+
+.font-script {
+  font-family: 'Reenie Beanie', cursive;
+}
+
+/* Wire Grid / Metal Mesh Wall Pattern (Reference #2) */
+.wire-grid-bg {
+  background-color: #0b1526;
+  background-image: 
+    linear-gradient(rgba(167, 235, 242, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(167, 235, 242, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
+
+/* Light / Warm Wall Grid for Light Mode / Aesthetic Blush Wall */
+.blush-wire-grid {
+  background-color: #f7f2ee;
+  background-image: 
+    linear-gradient(rgba(180, 160, 150, 0.35) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(180, 160, 150, 0.35) 2px, transparent 2px);
+  background-size: 60px 60px;
+}
+
+/* Wooden Cafe Desk Texture (Reference #3) */
+.desk-surface-bg {
+  background-color: #12100e;
+  background-image: radial-gradient(circle at 50% 30%, #1e1915 0%, #0d0b0a 100%);
+  position: relative;
+}
+
+.desk-surface-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Window Shutter / Sunbeam Shadow Overlay */
+.window-shadow-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(0, 0, 0, 0.15) 20%,
+    rgba(255, 255, 255, 0.06) 40%,
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(255, 255, 255, 0.03) 80%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+/* 3D Flip Card Container */
+.polaroid-flip-container {
+  perspective: 1200px;
+}
+
+.polaroid-flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.polaroid-flip-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.polaroid-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 12px;
+}
+
+.polaroid-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.polaroid-back {
+  transform: rotateY(180deg);
+  background: #fbf9f5;
+  color: #1a1a1a;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Washi Tape Ribbon */
+.washi-tape-accent {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  height: 26px;
+  width: 110px;
+  background: rgba(245, 235, 200, 0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-left: 2px dashed rgba(0,0,0,0.15);
+  border-right: 2px dashed rgba(0,0,0,0.15);
+  z-index: 30;
+  backdrop-filter: blur(2px);
+}
+
+.washi-tape-teal {
+  background: rgba(167, 235, 242, 0.82) !important;
+}
+.washi-tape-rose {
+  background: rgba(255, 209, 220, 0.85) !important;
+}
+.washi-tape-amber {
+  background: rgba(254, 236, 179, 0.88) !important;
+}
+.washi-tape-kraft {
+  background: rgba(215, 196, 170, 0.85) !important;
+}
+
+/* Metal Binder Clip */
+.binder-clip-top {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 35;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.binder-clip-handle {
+  width: 22px;
+  height: 20px;
+  border: 2.5px solid #d1d5db;
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+  background: transparent;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.6);
+}
+
+.binder-clip-body {
+  width: 38px;
+  height: 14px;
+  background: linear-gradient(180deg, #374151 0%, #111827 100%);
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Torn paper edge effect */
+.torn-edge-bottom {
+  position: relative;
+}
+.torn-edge-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%);
+  background-size: 10px 10px;
+}
+
+

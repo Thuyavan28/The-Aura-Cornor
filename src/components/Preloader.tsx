@@ -80,16 +80,16 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           />
 
           {/* Logo Center Container */}
-          <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 20px', width: '100%', maxWidth: '340px' }}>
             {/* Pulsing Outer Rings */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
               style={{
                 position: 'absolute',
-                width: '180px',
-                height: '180px',
-                top: '-20px',
+                width: 'min(180px, 48vw)',
+                height: 'min(180px, 48vw)',
+                top: '-10px',
                 borderRadius: '50%',
                 border: '1.5px dashed rgba(167,235,242,0.35)',
                 pointerEvents: 'none',
@@ -100,20 +100,21 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
               animate={{ scale: [0.95, 1.05, 0.95] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               style={{
-                width: '140px',
-                height: '140px',
+                width: 'min(140px, 38vw)',
+                height: 'min(140px, 38vw)',
                 borderRadius: '50%',
                 overflow: 'hidden',
                 boxShadow: '0 0 40px rgba(167,235,242,0.5), 0 0 80px rgba(84,172,191,0.3)',
                 border: '2px solid rgba(167,235,242,0.5)',
                 marginBottom: '24px',
                 position: 'relative',
+                flexShrink: 0,
               }}
             >
               <img
                 src={auraLogo}
                 alt="The Aura Corner Logo"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
             </motion.div>
 
@@ -158,7 +159,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             {/* Progress Bar */}
             <div
               style={{
-                width: '200px',
+                width: 'min(200px, 72vw)',
                 height: '3px',
                 borderRadius: '50px',
                 background: 'rgba(255,255,255,0.08)',

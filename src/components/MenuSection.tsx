@@ -250,6 +250,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
 
         {/* ── CATEGORY TAB BAR + SEARCH ───────────────────────────────── */}
         <div
+          className="menu-header-row"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -312,6 +313,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
 
           {/* Search Box */}
           <div
+            className="menu-search-box"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -320,8 +322,8 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
               borderRadius: '4px',
               border: '1px solid rgba(255,255,255,0.14)',
               background: 'rgba(255,255,255,0.02)',
-              minWidth: '200px',
-              flex: '1 1 200px',
+              minWidth: '180px',
+              flex: '1 1 180px',
               maxWidth: '300px',
             }}
           >

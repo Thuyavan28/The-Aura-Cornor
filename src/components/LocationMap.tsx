@@ -5,13 +5,15 @@ import { Reveal } from './Reveal';
 export const LocationMap: React.FC = () => {
   const address = '7/518, Velachery Main Rd, Vijayanagaram, Santhosapuram, Medavakkam, Chennai, Tamil Nadu 600100';
   const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(address)}`;
+  const whatsappUrl = `https://wa.me/919363642701?text=${encodeURIComponent("Hi! I'd like to book a table at The Aura Corner, Medavakkam.")}`;
 
   return (
     <section id="location" style={{ backgroundColor: '#fff', padding: '100px 0', position: 'relative', overflow: 'hidden' }}>
       <div className="organic-pattern" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.5 }} />
 
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 10 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '64px', alignItems: 'center' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 clamp(20px, 4vw, 32px)', position: 'relative', zIndex: 10 }}>
+        {/* ── Responsive grid: info left, map right on desktop; stacked on mobile ── */}
+        <div className="location-grid">
 
           {/* ── Left: Info ── */}
           <div>
@@ -23,7 +25,7 @@ export const LocationMap: React.FC = () => {
             </Reveal>
 
             <Reveal direction="left" delay={0.1}>
-              <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: 'clamp(30px, 4vw, 50px)', fontWeight: 700, color: '#000', margin: '0 0 32px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+              <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: 'clamp(28px, 4vw, 50px)', fontWeight: 700, color: '#000', margin: '0 0 32px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
                 Come, Sit Down &<br />
                 <span style={{ fontStyle: 'italic', fontWeight: 400, color: '#26658C' }}>Stay a While</span>
               </h2>
@@ -47,7 +49,7 @@ export const LocationMap: React.FC = () => {
                 icon: <Phone size={18} color="#26658C" />,
                 label: 'Contact',
                 value: 'Walk in or reserve via WhatsApp',
-                sub: 'Book a table through the button below',
+                sub: '+91 93636 42701',
               },
             ].map((info, i) => (
               <Reveal key={i} direction="left" delay={0.15 + i * 0.1}>
@@ -76,12 +78,44 @@ export const LocationMap: React.FC = () => {
 
             <Reveal direction="left" delay={0.45}>
               <div style={{ display: 'flex', gap: '12px', marginTop: '24px', flexWrap: 'wrap' }}>
-                <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ background: '#000', display: 'inline-flex' }}>
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '8px',
+                    padding: '13px 24px', borderRadius: '50px',
+                    background: '#000', color: '#fff',
+                    fontFamily: '"Outfit", sans-serif', fontSize: '12px',
+                    fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
+                    textDecoration: 'none', cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#26658C'; e.currentTarget.style.transform = 'scale(1.03)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = '#000'; e.currentTarget.style.transform = 'scale(1)'; }}
+                >
                   <Navigation size={14} />
                   <span>Get Directions</span>
                   <ExternalLink size={12} />
                 </a>
-                <a href={`https://wa.me/?text=Hi! I'd like to book a table at The Aura Corner`} target="_blank" rel="noopener noreferrer" className="btn-outline btn-outline-dark" style={{ display: 'inline-flex' }}>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '8px',
+                    padding: '13px 24px', borderRadius: '50px',
+                    background: '#25D366', color: '#fff',
+                    fontFamily: '"Outfit", sans-serif', fontSize: '12px',
+                    fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
+                    textDecoration: 'none', cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 4px 16px rgba(37,211,102,0.35)',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.03)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(37,211,102,0.5)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(37,211,102,0.35)'; }}
+                >
                   <span>📲 WhatsApp Book</span>
                 </a>
               </div>
