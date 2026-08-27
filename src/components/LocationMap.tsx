@@ -5,7 +5,7 @@ import { Reveal } from './Reveal';
 export const LocationMap: React.FC = () => {
   const address = '7/518, Velachery Main Rd, Vijayanagaram, Santhosapuram, Medavakkam, Chennai, Tamil Nadu 600100';
   const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(address)}`;
-  const whatsappUrl = `https://wa.me/919363642701?text=${encodeURIComponent("Hi! I'd like to book a table at The Aura Corner, Medavakkam.")}`;
+  const whatsappUrl = `https://wa.me/919790921125?text=${encodeURIComponent("Hi! I'd like to book a table at The Aura Corner, Medavakkam.")}`;
 
   return (
     <section id="location" style={{ backgroundColor: '#fff', padding: '100px 0', position: 'relative', overflow: 'hidden' }}>
@@ -49,7 +49,7 @@ export const LocationMap: React.FC = () => {
                 icon: <Phone size={18} color="#26658C" />,
                 label: 'Contact',
                 value: 'Walk in or reserve via WhatsApp',
-                sub: '+91 93636 42701',
+                sub: '+91 97909 21125',
               },
             ].map((info, i) => (
               <Reveal key={i} direction="left" delay={0.15 + i * 0.1}>

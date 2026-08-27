@@ -77,7 +77,7 @@ export const FavoritesDrawer: React.FC<FavoritesDrawerProps> = ({
       `${divider}\n\n` +
       `Please confirm the order. Thank you! 🙏`;
 
-    const waUrl = `https://wa.me/919363642701?text=${encodeURIComponent(message)}`;
+    const waUrl = `https://wa.me/919790921125?text=${encodeURIComponent(message)}`;
     window.open(waUrl, '_blank');
 
     // Clear cart & go to success
@@ -433,7 +433,7 @@ export const FavoritesDrawer: React.FC<FavoritesDrawerProps> = ({
                     <span>Send Order to WhatsApp</span>
                   </motion.button>
                   <p style={{ textAlign: 'center', marginTop: '10px', fontSize: '11px', color: '#94a3b8', fontFamily: '"Outfit", sans-serif' }}>
-                    Your order + details will be sent to +91 93636 42701
+                    Your order + details will be sent to +91 97909 21125
                   </p>
                 </div>
               </>
@@ -474,7 +474,7 @@ export const FavoritesDrawer: React.FC<FavoritesDrawerProps> = ({
                   </p>
                   <div style={{ background: '#F0FDF4', borderRadius: '14px', padding: '14px 20px', marginBottom: '28px', border: '1px solid rgba(37,211,102,0.2)' }}>
                     <p style={{ margin: 0, fontSize: '12px', color: '#16a34a', fontWeight: 600, fontFamily: '"Outfit", sans-serif' }}>
-                      📞 +91 93636 42701 — The Aura Corner
+                      📞 +91 97909 21125 — The Aura Corner
                     </p>
                   </div>
 

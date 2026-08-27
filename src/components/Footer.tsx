@@ -14,7 +14,7 @@ const InstagramIcon: React.FC<{ size?: number }> = ({ size = 16 }) => (
 
 export const Footer: React.FC = () => {
   const year = new Date().getFullYear();
-  const whatsappUrl = `https://wa.me/919363642701?text=${encodeURIComponent("Hi! I'd like to book a table at The Aura Corner.")}`;
+  const whatsappUrl = `https://wa.me/919790921125?text=${encodeURIComponent("Hi! I'd like to book a table at The Aura Corner.")}`;
 
   return (
     <footer style={{ backgroundColor: '#000', color: '#fff', position: 'relative', overflow: 'hidden' }}>
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
                 <span>Explore Menu</span>
               </a>
 
-              {/* WhatsApp Book — goes to 9363642701 */}
+              {/* WhatsApp Book — goes to 9790921125 */}
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -238,7 +238,7 @@ export const Footer: React.FC = () => {
                     onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
                   >
                     <MessageCircle size={13} />
-                    +91 93636 42701
+                    +91 97909 21125
                   </a>
                 </div>
               </div>

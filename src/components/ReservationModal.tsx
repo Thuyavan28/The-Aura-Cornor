@@ -8,7 +8,7 @@ interface ReservationModalProps {
 }
 
 // Café Owner's WhatsApp Number
-const OWNER_WHATSAPP_NUMBER = '919363642701';
+const OWNER_WHATSAPP_NUMBER = '919790921125';
 
 export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) => {
   const [step, setStep] = useState<'form' | 'success'>('form');

@@ -3,12 +3,9 @@ import { motion } from 'framer-motion';
 import { Camera, Sparkles } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { PolaroidCard } from './gallery/PolaroidCard';
-import { GalleryLightbox } from './gallery/GalleryLightbox';
-import { GALLERY_ITEMS, type GalleryItem } from '../data/galleryData';
+import { GALLERY_ITEMS } from '../data/galleryData';
 
 export const GallerySection: React.FC = () => {
-  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
-
   // Track liked items in localStorage
   const [likedMap, setLikedMap] = useState<Record<string, boolean>>(() => {
     try {
@@ -157,7 +154,7 @@ export const GallerySection: React.FC = () => {
                 color: '#A7EBF2',
                 fontFamily: '"Outfit", sans-serif',
               }}>
-                📎 Suspended Polaroid Photo Display
+                📎 Suspended Polaroid Photo Display • Tap to Flip
               </p>
             </div>
           </div>
@@ -188,7 +185,6 @@ export const GallerySection: React.FC = () => {
               >
                 <PolaroidCard
                   item={item}
-                  onOpenLightbox={setSelectedItem}
                   isLiked={!!likedMap[item.id]}
                   onToggleLike={toggleLike}
                 />
@@ -197,16 +193,6 @@ export const GallerySection: React.FC = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Fullscreen Scrapbook Lightbox Modal */}
-      <GalleryLightbox
-        item={selectedItem}
-        allItems={GALLERY_ITEMS}
-        onClose={() => setSelectedItem(null)}
-        onSelect={setSelectedItem}
-        isLiked={selectedItem ? !!likedMap[selectedItem.id] : false}
-        onToggleLike={toggleLike}
-      />
     </section>
   );
 };

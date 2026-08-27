@@ -6,7 +6,7 @@ import { Reveal } from './Reveal';
 
 export const ConnectSection: React.FC = () => {
   const address = '7/518, Velachery Main Rd, Vijayanagaram, Santhosapuram, Medavakkam, Chennai, Tamil Nadu 600100';
-  const whatsappUrl = `https://wa.me/919363642701?text=${encodeURIComponent("Hi! I'd like to connect with The Aura Corner in Medavakkam, Chennai.")}`;
+  const whatsappUrl = `https://wa.me/919790921125?text=${encodeURIComponent("Hi! I'd like to connect with The Aura Corner in Medavakkam, Chennai.")}`;
 
   // Floating background emojis from the reference
   const floatingIcons = [
@@ -147,7 +147,7 @@ export const ConnectSection: React.FC = () => {
               {/* Phone */}
               <Reveal direction="left" delay={0.25}>
                 <a
-                  href="tel:+919363642701"
+                  href="tel:+919790921125"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -181,7 +181,7 @@ export const ConnectSection: React.FC = () => {
                       color: 'rgba(255,255,255,0.9)',
                     }}
                   >
-                    +91 93636 42701
+                    +91 97909 21125
                   </span>
                 </a>
               </Reveal>
